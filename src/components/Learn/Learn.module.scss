@@ -1,5 +1,6 @@
 .exercises-and-may-cai-ben-phai-container {
-  margin: 94px;
+  margin: 94px auto;
+  max-width: 1140px;
   display: flex;
 
   .exercises-container {
@@ -9,6 +10,7 @@
 
   .may-cai-ben-phai-container {
     flex: 1;
+    width: 428px;
 
     .daily-goal-container {
       border-style: solid;
@@ -17,7 +19,7 @@
       border-color: #ccc;
       padding: 20px;
 
-      .daily-goal-title{
+      .daily-goal-title {
         display: table;
         width: 100%;
 
@@ -25,6 +27,75 @@
         font-size: 24px;
         line-height: 26px;
         margin: 0 0 25px;
+        font-weight: 700;
+
+        .title {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        .change-goal {
+          float: right;
+          text-align: right;
+          display: table-cell;
+          color: #1cb0f6;
+          cursor: pointer;
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: .8px;
+          text-transform: uppercase;
+        }
+      }
+
+      .streak-container {
+        display: flex;
+        .streak-circle-container {
+          display: flex;
+          flex: 2;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          vertical-align: middle;
+
+          .streak-circle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ff9600;
+            font-size: 60px;
+            font-weight: bold;
+            width: 150px;
+            height: 150px;
+            border-style: solid;
+            border-width: 12px;
+            border-radius: 100%;
+            border-color: #ff9600;
+
+            .sub-text {
+              font-size: 17px;
+            }
+          }
+        }
+
+        .streak-goal-container {
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          .main-text {
+            color: #ff9600;
+            font-size: 32px;
+            font-weight: bold;
+          }
+
+          .sub-text {
+            font-size: 17px;
+            color: #777777;
+          }
+        }
       }
     }
   }

@@ -182,3 +182,13 @@ export const exerciseGroupLvl1 = {
     [ thoiGian, giaDinh ],
   ]
 };
+
+export const achivements = [
+  { id: uuid(), name: "Lửa rừng", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-flame.svg", star: 3 },
+  { id: uuid(), name: "Quán quân", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-swords.svg", star: 1 },
+  { id: uuid(), name: "Thân thiện", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-envelope.svg", star: 0 },
+  { id: uuid(), name: "Vượt mong đợi", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-medal.svg", star: 1 },
+  { id: uuid(), name: "Người chi mạnh tay", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-lingot.svg", star: 2 },
+  { id: uuid(), name: "Ngoài giờ", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-hourglass.svg", star: 0 },
+  { id: uuid(), name: "Thiện xạ", iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-bow.svg", star: 2 }
+]

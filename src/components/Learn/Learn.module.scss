@@ -16,14 +16,15 @@
     flex: 1;
     width: 428px;
 
-    .daily-goal-container {
+    .frame {
       border-style: solid;
       border-width: 2px;
       border-radius: 10px;
       border-color: #ccc;
       padding: 20px;
+      margin-bottom: 20px;
 
-      .daily-goal-title {
+      .frame-title {
         display: table;
         width: 100%;
 
@@ -38,7 +39,7 @@
           vertical-align: middle;
         }
 
-        .change-goal {
+        .more {
           float: right;
           text-align: right;
           display: table-cell;
@@ -111,6 +112,65 @@
             font-size: 17px;
             color: #777777;
           }
+        }
+      }
+
+      .achievements-container {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .one-achievement-container {
+          width: 22%;
+          margin: 5px;
+          cursor: pointer;
+
+          .achievement-icon {
+            width: 100%;
+            padding-bottom: 124.5%;
+            
+          }
+
+          .star-container {
+            width: 16px;
+            height: 16px; 
+            position: absolute;
+            // background-color: yellow;
+
+            .black-star {
+              background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star_black.svg) no-repeat;
+              background-size: contain;
+              background-position: 50%;
+              opacity: .2;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+            }
+
+            .gold-star {
+              background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star.svg) no-repeat;
+              background-size: contain;
+              background-position: 50%;
+              opacity: 1;
+              z-index: 2;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+            }
+          }
+
+          .star-1 {
+            transform: translate(50%, -230%);
+          }
+          .star-2 {
+            transform: translate(178%, -160%);
+          }
+          .star-3 {
+            transform: translate(305%, -230%);
+          }
+        }
+
+        .one-achievement-container:hover {
+          opacity: .8;
         }
       }
     }

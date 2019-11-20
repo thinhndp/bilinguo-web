@@ -1,0 +1,295 @@
+.exercises-and-may-cai-ben-phai-container {
+  margin: 94px auto;
+  max-width: 1140px;
+  display: flex;
+
+  .exercises-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    // background-color: red;
+  }
+
+  .may-cai-ben-phai-container {
+    flex: 1;
+    width: 428px;
+
+    .frame {
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 10px;
+      border-color: #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      .frame-title {
+        display: table;
+        width: 100%;
+
+        color: #3c3c3c;
+        font-size: 24px;
+        line-height: 26px;
+        margin: 0 0 25px;
+        font-weight: 700;
+
+        .title {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        .more {
+          float: right;
+          text-align: right;
+          display: table-cell;
+          color: #1cb0f6;
+          cursor: pointer;
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: .8px;
+          text-transform: uppercase;
+        }
+      }
+
+      .streak-container {
+        display: flex;
+        .streak-circle-container {
+          display: flex;
+          flex: 2;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          vertical-align: middle;
+
+          .streak-circle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ff9600;
+            font-size: 60px;
+            font-weight: bold;
+            width: 150px;
+            height: 150px;
+            border-style: solid;
+            border-width: 12px;
+            border-radius: 100%;
+            border-color: #ff9600;
+
+            .sub-text {
+              font-size: 12px;
+            }
+
+            .streak-logo {
+              height: 56.25px;
+              width: 56.25px;
+              // background-color: royalblue;
+              position: absolute;
+              background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/icons/streak.svg);
+              background-repeat: no-repeat;
+              background-size: contain;
+              transform: translate(75%, 90%);
+            }
+          }
+
+        }
+
+        .streak-goal-container {
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          .main-text {
+            color: #ff9600;
+            font-size: 32px;
+            font-weight: bold;
+          }
+
+          .sub-text {
+            font-size: 17px;
+            color: #777777;
+          }
+        }
+      }
+
+      .achievements-container {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .one-achievement-container {
+          width: 22%;
+          margin: 5px;
+          cursor: pointer;
+
+          .achievement-icon {
+            width: 100%;
+            padding-bottom: 124.5%;
+            
+          }
+
+          .star-container {
+            width: 16px;
+            height: 16px; 
+            position: absolute;
+            // background-color: yellow;
+
+            .black-star {
+              background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star_black.svg) no-repeat;
+              background-size: contain;
+              background-position: 50%;
+              opacity: .2;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+            }
+
+            .gold-star {
+              background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star.svg) no-repeat;
+              background-size: contain;
+              background-position: 50%;
+              opacity: 1;
+              z-index: 2;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+            }
+          }
+
+          .star-1 {
+            transform: translate(50%, -230%);
+          }
+          .star-2 {
+            transform: translate(178%, -160%);
+          }
+          .star-3 {
+            transform: translate(305%, -230%);
+          }
+        }
+
+        .one-achievement-container:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  width: 100%;
+  margin: 25px 0;
+  // background-color: royalblue;
+
+  .divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // background-color: slategrey;
+
+    .line {
+      flex: 1;
+      background-color: #ddd;
+      height: 2px;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        width: 45px;
+        margin: 20px;
+        transform: translate(5%, -20%);
+      }
+
+      .level {
+        color: #cd7900;
+        font-size: 17px;
+        font-weight: bold;
+        position: absolute;
+        transform: translate(10%, 0%);
+      }
+    }
+
+  }
+
+  .course-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .exercise-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      cursor: pointer;
+      // border-radius: 100%;
+      // background-color: salmon;
+      
+      .exercise-illustration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 106px;
+        height: 106px;
+        border: 8px solid #E5E5E5;
+        // background-color: seagreen;
+        border-radius: 100%;
+
+        .exercise-background-circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 72px;
+          height: 72px;
+          border-radius: 100%;
+
+          .exercise-icon {
+            width: 65px;
+            height: 65px;
+          }
+
+          .exercise-icon:hover {
+            width: 72px;
+            height: 72px;
+            animation: shake 0.25s;
+            animation-iteration-count: infinite;
+          }
+        }
+
+        .honey-you-should-see-me-in-a-crown {
+          position: absolute;
+          transform: translate(70%, 60%);
+
+          .level-reached {
+            color: #cd7900;
+            font-size: 15px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+          }
+        }
+      }
+
+      .exercise-name {
+        font-size: 17px;
+        font-weight: bold;
+        text-align: center;
+        color: #3C3C3C;
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-13deg); }
+  100% { transform: rotate(13deg); }
+}

@@ -13,7 +13,7 @@ const Learn = props => {
       {/* <div className={classes['cai-anh-dang-sau']}></div> */}
       <img
         className={classes["imgage"]}
-        src={require("../../assets/field2.png")}
+        src={require("../../assets/field17edited.png")}
         alt="field"
       />
       <div className={classes["exercises-and-may-cai-ben-phai-container"]}>

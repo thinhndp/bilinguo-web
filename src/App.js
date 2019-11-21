@@ -5,7 +5,7 @@ import Showcase from './components/Showcase/Showcase';
 
 function App() {
   return (
-    <div style={{ backgroundColor: "paleturquoise", zIndex: -2 }}>
+    <div style={{ backgroundColor: "#ddd", zIndex: -2 }}>
       <Showcase></Showcase>
     </div>
   );

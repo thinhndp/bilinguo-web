@@ -1,5 +1,26 @@
+.cai-anh-dang-sau {
+  // width: 100vh;
+  // left: 0;
+  // position: absolute;
+  // z-index: -1;
+  background-color: red;
+  // height: 100px;
+  width: 100%;
+  position: absolute;
+  background-image: url('../../assets/field2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.imgage {
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+}
+
 .exercises-and-may-cai-ben-phai-container {
-  margin: 94px auto;
+  margin: 50px auto 0;
   max-width: 1140px;
   display: flex;
 
@@ -10,19 +31,25 @@
     // justify-content: center;
     align-items: center;
     // background-color: red;
+    margin: 0 50px 0 0;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 100;
   }
 
   .may-cai-ben-phai-container {
     flex: 1;
     width: 428px;
+    z-index: 100;
 
     .frame {
-      border-style: solid;
-      border-width: 2px;
-      border-radius: 10px;
+      // border-style: solid;
+      // border-width: 2px;
+      border-radius: 20px;
       border-color: #ccc;
       padding: 20px;
       margin-bottom: 20px;
+      background-color: white;
 
       .frame-title {
         display: table;
@@ -121,8 +148,9 @@
         
         .one-achievement-container {
           width: 22%;
-          margin: 5px;
+          margin: 1.5%;
           cursor: pointer;
+          position: relative;
 
           .achievement-icon {
             width: 100%;
@@ -131,8 +159,8 @@
           }
 
           .star-container {
-            width: 16px;
-            height: 16px; 
+            width: 20%;
+            height: 20%; 
             position: absolute;
             // background-color: yellow;
 
@@ -159,13 +187,22 @@
           }
 
           .star-1 {
-            transform: translate(50%, -230%);
+            // transform: translate(50%, -230%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-200%, 50%);
           }
           .star-2 {
-            transform: translate(178%, -160%);
+            // transform: translate(178%, -160%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 100%);
           }
           .star-3 {
-            transform: translate(305%, -230%);
+            // transform: translate(305%, -230%);
+            left: 50%;
+            top: 50%;
+            transform: translate(100%, 50%);
           }
         }
 

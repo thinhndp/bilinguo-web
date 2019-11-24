@@ -3,9 +3,11 @@ import classes from "./Exercise.module.scss";
 import { FaTimes, FaCheck } from "react-icons/fa";
 import { Line } from "rc-progress";
 import { Button } from "react-bootstrap";
+import ExerciseDetail from './ExerciseDetail/ExerciseDetail';
+import { exerciseList } from './mock-exercises';
 
 const Exercise = () => {
-  const [answered, setAnswered] = useState("incorrect");
+  const [answered, setAnswered] = useState("unanswered");
 
   const makeTyping = () => {
     if (answered !== "typing") {
@@ -51,10 +53,7 @@ const Exercise = () => {
           </div>
         </div>
         <div className={classes["exercise-detail-container"]}>
-          <Button onClick={makeTyping}>typing</Button>
-          <Button onClick={makeCorrect}>o</Button>
-          <Button onClick={makeIncorrect}>x</Button>
-          <div>{answered}</div>
+          <ExerciseDetail exercise={exerciseList[0]}></ExerciseDetail>
         </div>
         <div className={classes["footer"]}>
           { answered === "correct" ?

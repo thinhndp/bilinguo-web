@@ -1,0 +1,38 @@
+.exercise-detail-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+  flex: 1;
+  padding: 0 60px;
+
+  .exercise-detail {
+    flex: 1;
+
+    .pictureSelectingContainer {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+
+      .pictureContainer {
+        flex: 1;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        height: 80%;
+        margin: 0 10px;
+        background-color: sandybrown;
+      }
+    }
+
+  }
+}
+
+.requirement {
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.question {
+  margin: 10px;
+  font-size: 18px;
+}

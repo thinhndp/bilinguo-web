@@ -47,6 +47,8 @@
   .exercise-detail-container {
     flex: 3;
     // background-color: rosybrown;
+    display: flex;
+    justify-content: center;
   }
 
   .footer {
@@ -198,14 +200,12 @@
 }
 @keyframes expand-then-shrink {
   0% {
-    // transform: scale(20%, 20%);
     transform: scale(0.9);
   }
   50% {
     transform: scale(1.1);
   }
   100% {
-    // transform: scale(200%, 200%);
     transform: scale(1);
   }
 }

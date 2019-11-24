@@ -1,8 +1,12 @@
-import React from "react";
-import classes from "./Learn.module.scss";
-import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../mock-data';
+import React from 'react';
 
-const Learn = props => {
+import Course from './components/Course';
+
+import classes from './PageExerciseMenu.module.scss';
+
+import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../../mock-data';
+
+function PageExerciseMenu(props) {
   return (
     <div>
       {/* <img
@@ -13,7 +17,7 @@ const Learn = props => {
       {/* <div className={classes['cai-anh-dang-sau']}></div> */}
       <img
         className={classes["imgage"]}
-        src={require("../../assets/field17edited.png")}
+        src={require("../../../assets/field17edited.png")}
         alt="field"
       />
       <div className={classes["exercises-and-may-cai-ben-phai-container"]}>
@@ -27,7 +31,7 @@ const Learn = props => {
           <div className={classes["frame"]}>
             <h2 className={classes["frame-title"]}>
               <span className={classes["title"]}>Mục tiêu mỗi ngày</span>
-              <a className={classes["more"]}>Lên Lịch</a>
+              <a href="/learn" className={classes["more"]}>Lên Lịch</a>
             </h2>
             <div className={classes["streak-container"]}>
               <div className={classes["streak-circle-container"]}>
@@ -50,7 +54,7 @@ const Learn = props => {
           <div className={classes["frame"]}>
             <h2 className={classes["frame-title"]}>
               <span className={classes["title"]}>Thành tích</span>
-              <a className={classes["more"]}>Xem thêm</a>
+              <a href="/profile/achievements" className={classes["more"]}>Xem thêm</a>
             </h2>
             <div className={classes["achievements-container"]}>
               { achivements.map(achivement => (
@@ -88,58 +92,6 @@ const Learn = props => {
       </div>
     </div>
   );
-};
+}
 
-const Course = props => {
-  return (
-    <div className={classes["course"]}>
-      {props.courseData.level > 0 ? (
-        <div className={classes["divider"]}>
-          <div className={classes["line"]}></div>
-          <div className={classes["icon-container"]}>
-            <img
-              className={classes["icon"]}
-              src="//d35aaqx5ub95lt.cloudfront.net/images/checkpoint-castle-complete.svg"
-              alt="milestone"
-            />
-            <div className={classes["level"]}>{props.courseData.level}</div>
-          </div>
-          <div className={classes["line"]}></div>
-        </div>
-      ) : null}
-      {props.courseData.rows.map(row => (
-        <div className={classes["course-row"]}>
-          {row.map(exercise => (
-            <div className={classes["exercise-container"]}>
-              <div className={classes["exercise-illustration"]}>
-                <div
-                  className={classes["exercise-background-circle"]}
-                  style={{ backgroundColor: exercise.backgroundColor }}
-                >
-                  <img
-                    className={classes["exercise-icon"]}
-                    src={require("../../assets/" + exercise.unlockedIconUrl)}
-                    alt="logo"
-                  ></img>
-                </div>
-                <div className={classes["honey-you-should-see-me-in-a-crown"]}>
-                  <img
-                    src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown.svg"
-                    alt="crown"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                  <div className={classes["level-reached"]}>
-                    {exercise.levelReached}
-                  </div>
-                </div>
-              </div>
-              <div className={classes["exercise-name"]}>{exercise.name}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default Learn;
+export default PageExerciseMenu;

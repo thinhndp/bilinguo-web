@@ -1,0 +1,31 @@
+.showcase {
+  // padding-top: 70px;
+
+  background: url('../../../../../assets/night-background.png');
+  width: 100%;
+  height: 100vh;
+  // background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .opacity-layer {
+    // background-color: black;
+    background: rgba(29, 60, 163, 0.8);
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .showcase-inner-container {
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+}

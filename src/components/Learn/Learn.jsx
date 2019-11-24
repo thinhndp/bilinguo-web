@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./Learn.module.scss";
+import Exercise from '../Exercise/Exercise';
 import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from "../../mock-data";
 
 const Learn = props => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#ddd", zIndex: -2 }}>
       {/* <img
         className={classes["cai-anh-dang-sau"]}
         src={require("../../assets/field.png")}

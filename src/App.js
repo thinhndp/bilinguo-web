@@ -1,13 +1,24 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Showcase from './components/Showcase/Showcase';
+// import Showcase from './components/Showcase/Showcase';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import { routes } from './routes';
 
 function App() {
   return (
-    <div style={{ backgroundColor: "#ddd", zIndex: -2 }}>
-      <Showcase></Showcase>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          { routes.map(({ path, component }) => (
+            <Route path={path}>
+              {component}
+            </Route>
+          )) }
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

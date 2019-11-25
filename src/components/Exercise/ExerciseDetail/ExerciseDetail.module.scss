@@ -9,11 +9,53 @@
   .exercise-detail {
     flex: 1;
 
-    .pictures-selecting-container {
+    .sentence-selecting-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 10px 10px 30px;
+      font-weight: bold;
+
+      .choice-container {
+        margin: 10px 0;
+        // flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        height: 65px;
+        cursor: pointer;
+
+        .tab-number {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // text-align: center;
+          // line-height: 36px;
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+          border: 2px solid #ddd;
+          position: absolute;
+          margin: 0 25px;
+          color: #aaaaaa;
+        }
+        .answer {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .picture-selecting-container {
       display: flex;
       flex-direction: row;
       height: 100%;
-      
+
       .picture-and-info-container {
         cursor: pointer;
         flex: 1;
@@ -67,7 +109,6 @@
         }
       }
     }
-
   }
 }
 
@@ -79,34 +120,37 @@
 
 .question {
   margin: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 550;
 }
 
 .hover-zone {
-
 }
 
 .hover-zone:hover {
-  border: 2px solid #1CB0F6 !important;
-  background-color: #DDF4FF;
-  color: #1CB0F6;
+  border: 2px solid #1cb0f6 !important;
+  background-color: #ddf4ff;
+  color: #1cb0f6 !important;
   // border-color: #1CB0F6;
 
   .tab-number {
-    border: 2px solid #1CB0F6 !important;
+    border: 2px solid #1cb0f6 !important;
+    color: #1cb0f6 !important;
   }
 }
 
 .choosen-one {
-  border: 2px solid #1CB0F6 !important;
-  background-color: #DDF4FF;
-  color: #1CB0F6;
+  border: 2px solid #1cb0f6 !important;
+  background-color: #ddf4ff;
+  color: #1cb0f6 !important;
   .tab-number {
-    border: 2px solid #1CB0F6 !important;
+    border: 2px solid #1cb0f6 !important;
+    color: #1cb0f6 !important;
   }
 }
 
-.zoom-on-click {}
+.zoom-on-click {
+}
 
 .zoom-on-click:active {
   animation: zoom-on-click 0.2s ease-in-out;
@@ -115,6 +159,22 @@
 @keyframes zoom-on-click {
   0% {
     transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.shrink-on-click {
+}
+
+.shrink-on-click:active {
+  animation: shrink-on-click 0.2s ease-in-out;
+}
+
+@keyframes shrink-on-click {
+  0% {
+    transform: scale(0.985);
   }
   100% {
     transform: scale(1);

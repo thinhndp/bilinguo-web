@@ -44,7 +44,7 @@ export const vieEngSentenceSelecting = "vieEngSentenceSelecting";
 
 export const exerciseList = [
   vieEngPictureSelectingExercise,
+  vieEngSentenceSelectingExercise,
   engVieSentenceTranslatingExercise,
-  vieEngSentenceMakingExercise,
-  vieEngSentenceSelectingExercise
+  vieEngSentenceMakingExercise
 ]

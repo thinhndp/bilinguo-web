@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./ExerciseDetail.module.scss";
-import uuid from 'uuid';
+import uuid from "uuid";
 import {
   vieEngPictureSelecting,
   engVieSentenceTranslating,
@@ -41,6 +41,14 @@ const ExerciseDetail = props => {
             sendAnswer={sendAnswer}
           />
         );
+      case engVieSentenceTranslating:
+        return (
+          <EngVieSentenceTranslating
+            exercise={exercise}
+            userAnswer={userAnswer}
+            sendAnswer={sendAnswer}
+          />
+        );
       default:
         return null;
     }
@@ -57,6 +65,24 @@ const ExerciseDetail = props => {
   );
 };
 
+const EngVieSentenceTranslating = props => {
+  const { exercise, userAnswer, sendAnswer } = props;
+
+  const handleChange = event => {
+    sendAnswer(event.target.value)
+  }
+
+  return (
+    <div className={classes["sentence-translating-container"]}>
+      <textarea
+        className={classes['input']}
+        value={userAnswer}
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
+
 const VieEngSentenceMaking = props => {
   const [answerSentence, setAnswerSentence] = useState([]);
   const { exercise, userAnswer, sendAnswer } = props;
@@ -66,56 +92,56 @@ const VieEngSentenceMaking = props => {
     word: word
   }));
 
-  const isWordInAnswerSentence = (wordToCheck) => {
+  const isWordInAnswerSentence = wordToCheck => {
     return answerSentence.findIndex(word => word.id === wordToCheck.id) !== -1;
-  }
+  };
 
-  const pushWordToAnswerSentence = (nWord) => {
+  const pushWordToAnswerSentence = nWord => {
     if (isWordInAnswerSentence(nWord)) {
       return;
     }
-    setAnswerSentence([
-      ...answerSentence,
-      nWord
-    ]);
+    setAnswerSentence([...answerSentence, nWord]);
 
-    let newUserAnswer = userAnswer
-    newUserAnswer += (newUserAnswer === "") ? nWord.word : (" " + nWord.word);
+    let newUserAnswer = userAnswer;
+    newUserAnswer += newUserAnswer === "" ? nWord.word : " " + nWord.word;
     sendAnswer(newUserAnswer);
-  }
+  };
 
-  const deleteWordFromAnswerSentence = (wordToDelete) => {
-    setAnswerSentence(answerSentence.filter(word => word.id !== wordToDelete.id));
-  }
+  const deleteWordFromAnswerSentence = wordToDelete => {
+    setAnswerSentence(
+      answerSentence.filter(word => word.id !== wordToDelete.id)
+    );
+  };
 
   return (
     <div className={classes["sentence-making-container"]}>
       <div className={classes["line"] + " " + classes["line-1"]} />
       <div className={classes["line"] + " " + classes["line-2"]} />
       <div className={classes["answer-sentence-container"]}>
-        {
-          answerSentence.map(wordObj => (
-            <div
-              className={classes["word-container"]}
-              onClick={deleteWordFromAnswerSentence.bind(this, wordObj)}
-            >
-              {wordObj.word}
-            </div>
-          ))
-        }
+        {answerSentence.map(wordObj => (
+          <div
+            className={classes["word-container"]}
+            onClick={deleteWordFromAnswerSentence.bind(this, wordObj)}
+          >
+            {wordObj.word}
+          </div>
+        ))}
       </div>
       <div className={classes["words-to-pick-container"]}>
-        {
-          wordsToPickList.map(wordObj => (
-            <div
-              key={wordObj.id}
-              className={classes["word-container"] + (isWordInAnswerSentence(wordObj) ? " " + classes['picked-word'] : "")}
-              onClick={pushWordToAnswerSentence.bind(this, wordObj)}
-            >
-              {wordObj.word}
-            </div>
-          ))
-        }
+        {wordsToPickList.map(wordObj => (
+          <div
+            key={wordObj.id}
+            className={
+              classes["word-container"] +
+              (isWordInAnswerSentence(wordObj)
+                ? " " + classes["picked-word"]
+                : "")
+            }
+            onClick={pushWordToAnswerSentence.bind(this, wordObj)}
+          >
+            {wordObj.word}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -132,7 +158,7 @@ const VieEngPictureSelecting = props => {
             " " +
             classes["hover-zone"] +
             " " +
-            classes["zoom-on-click"] +
+            classes["shrink-on-click"] +
             (word === userAnswer ? " " + classes["choosen-one"] : "")
           }
           onClick={sendAnswer.bind(this, word)}
@@ -160,8 +186,14 @@ const VieEngSentenceSelecting = props => {
     <div className={classes["sentence-selecting-container"]}>
       {exercise.choices.map((choice, index) => (
         <div
-          className={classes["choice-container"] + " " + classes["hover-zone"] + " " + classes["shrink-on-click"] +
-            (choice === userAnswer ? " " + classes["choosen-one"] : "")}
+          className={
+            classes["choice-container"] +
+            " " +
+            classes["hover-zone"] +
+            " " +
+            classes["shrink-on-click"] +
+            (choice === userAnswer ? " " + classes["choosen-one"] : "")
+          }
           onClick={sendAnswer.bind(this, choice)}
         >
           <div className={classes["tab-number"]}>{index + 1}</div>

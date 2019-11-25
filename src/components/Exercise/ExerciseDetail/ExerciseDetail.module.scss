@@ -9,7 +9,26 @@
   .exercise-detail {
     flex: 1;
 
-    
+    .sentence-translating-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 10px;
+
+      .input {
+        height: 150px;
+        padding: 10px 15px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        outline: none !important;
+        font-size: 18px;
+      }
+
+      .input:focus {
+        border: 2px solid #1cb0f6 !important;
+      }
+    }
+
     .sentence-making-container {
       display: flex;
       flex-direction: column;
@@ -223,7 +242,7 @@
 
 @keyframes zoom-on-click {
   0% {
-    transform: scale(1.05);
+    transform: scale(0.95);
   }
   100% {
     transform: scale(1);

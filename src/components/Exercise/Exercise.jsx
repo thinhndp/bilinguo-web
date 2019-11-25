@@ -8,6 +8,8 @@ import { exerciseList } from './mock-exercises';
 
 const Exercise = () => {
   const [answered, setAnswered] = useState("unanswered");
+  const [userAnswer, setUserAnswer] = useState("");
+  const [curExercise, setCurExercise] = useState(exerciseList[0]);
 
   const makeTyping = () => {
     if (answered !== "typing") {
@@ -33,8 +35,31 @@ const Exercise = () => {
     }
   };
 
+  const handleAnswerChange = (answer) => {
+    if (answered === "correct" || answered === "incorrect") {
+      return;
+    }
+    setUserAnswer(answer);
+    if (answer === "") {
+      setAnswered("unanswered");
+    }
+    else {
+      setAnswered("typing")
+    }
+  }
+
+  const handleCheckClick = () => {
+    if (userAnswer === curExercise.answers[0]) {
+      setAnswered("correct");
+    }
+    else {
+      setAnswered("incorrect");
+    }
+  }
+
   return (
     <div style={{ height: "100vh" }}>
+      {/* <div>Test: {userAnswer}</div> */}
       <div className={classes["container"]}>
         <div className={classes["header"]}>
           <div className={classes["progress-bar-container"]}>
@@ -53,14 +78,18 @@ const Exercise = () => {
           </div>
         </div>
         <div className={classes["exercise-detail-container"]}>
-          <ExerciseDetail exercise={exerciseList[0]}></ExerciseDetail>
+          <ExerciseDetail 
+            exercise={exerciseList[0]}
+            handleAnswerChange={handleAnswerChange}
+            userAnswer={userAnswer}
+          ></ExerciseDetail>
         </div>
         <div className={classes["footer"]}>
           { answered === "correct" ?
               <CorrectFooter answered={answered} />
               : ( answered === "incorrect" ? 
-                    <IncorrectFooter answered={answered} />
-                    : <UnansweredFooter answered={answered} />
+                    <IncorrectFooter answered={answered} correctAnswer={curExercise.answers[0]} />
+                    : <UnansweredFooter answered={answered} handleCheckClick={handleCheckClick} />
                 )
           }
         </div>
@@ -113,7 +142,7 @@ const IncorrectFooter = props => {
           </div>
           <div className={classes['text-container']}>
             <div className={classes['main-text']}>Không chính xác</div>
-            <div className={classes['sub-text']}>Đáp án đúng: "Ricardo"</div>
+            <div className={classes['sub-text']}>Đáp án đúng: "{props.correctAnswer}"</div>
           </div>
         </div>
         <Button
@@ -147,6 +176,7 @@ const UnansweredFooter = props => {
               variant="success"
               size="lg"
               className={classes["button"] + " " + classes["success-button"]}
+              onClick={props.handleCheckClick}
             >
               Kiểm tra
             </Button>

@@ -13,7 +13,7 @@ const Learn = props => {
       /> */}
       {/* <div className={classes['cai-anh-dang-sau']}></div> */}
       <img
-        className={classes["imgage"]}
+        className={classes["image"]}
         src={require("../../assets/field17edited.png")}
         alt="field"
       />

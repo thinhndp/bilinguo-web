@@ -29,9 +29,9 @@ const vieEngPictureSelectingExercise = {
   id: "vieEngPictureSelecting",
   requirement: "Đâu là \"đàn ông\"?",
   imagesToPick: [
-    { index: 1, word: "boy", imgUrl: "/exercise-images/boy.png" },
-    { index: 2, word: "man", imgUrl: "/exercise-images/man.png" },
-    { index: 3, word: "cat", imgUrl: "/exercise-images/cat.png" }
+    { index: 1, word: "boy", imgUrl: "exercise-images/boy.png" },
+    { index: 2, word: "man", imgUrl: "exercise-images/man.png" },
+    { index: 3, word: "cat", imgUrl: "exercise-images/cat.png" }
   ],
   answers: [ "man" ]
 }

@@ -11,7 +11,7 @@ const vieEngSentenceMakingExercise = {
   requirement: "Viết mục này bằng tiếng Anh",
   question: "Tôi ăn con cua.",
   wordsToPick: [ "the", "bear", "I", "animal", "eat", "crab", "mouse", "the", "spider",  ],
-  answers: [ "I eat the crab." ]
+  answers: [ "I eat the crab" ]
 }
 
 const engVieSentenceTranslatingExercise = {

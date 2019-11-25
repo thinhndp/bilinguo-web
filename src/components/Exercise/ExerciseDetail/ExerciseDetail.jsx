@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./ExerciseDetail.module.scss";
+import uuid from 'uuid';
 import {
   vieEngPictureSelecting,
   engVieSentenceTranslating,
@@ -57,25 +58,61 @@ const ExerciseDetail = props => {
 };
 
 const VieEngSentenceMaking = props => {
+  const [answerSentence, setAnswerSentence] = useState([]);
   const { exercise, userAnswer, sendAnswer } = props;
+
+  const wordsToPickList = Array.from(exercise.wordsToPick, (word, index) => ({
+    id: index,
+    word: word
+  }));
+
+  const isWordInAnswerSentence = (wordToCheck) => {
+    return answerSentence.findIndex(word => word.id === wordToCheck.id) !== -1;
+  }
+
+  const pushWordToAnswerSentence = (nWord) => {
+    if (isWordInAnswerSentence(nWord)) {
+      return;
+    }
+    setAnswerSentence([
+      ...answerSentence,
+      nWord
+    ]);
+
+    let newUserAnswer = userAnswer
+    newUserAnswer += (newUserAnswer === "") ? nWord.word : (" " + nWord.word);
+    sendAnswer(newUserAnswer);
+  }
+
+  const deleteWordFromAnswerSentence = (wordToDelete) => {
+    setAnswerSentence(answerSentence.filter(word => word.id !== wordToDelete.id));
+  }
+
   return (
     <div className={classes["sentence-making-container"]}>
       <div className={classes["line"] + " " + classes["line-1"]} />
       <div className={classes["line"] + " " + classes["line-2"]} />
       <div className={classes["answer-sentence-container"]}>
         {
-          [].map(word => (
-            <div className={classes["word-container"]}>
-              {word}
+          answerSentence.map(wordObj => (
+            <div
+              className={classes["word-container"]}
+              onClick={deleteWordFromAnswerSentence.bind(this, wordObj)}
+            >
+              {wordObj.word}
             </div>
           ))
         }
       </div>
       <div className={classes["words-to-pick-container"]}>
         {
-          exercise.wordsToPick.map(word => (
-            <div className={classes["word-container"]}>
-              {word}
+          wordsToPickList.map(wordObj => (
+            <div
+              key={wordObj.id}
+              className={classes["word-container"] + (isWordInAnswerSentence(wordObj) ? " " + classes['picked-word'] : "")}
+              onClick={pushWordToAnswerSentence.bind(this, wordObj)}
+            >
+              {wordObj.word}
             </div>
           ))
         }

@@ -32,6 +32,14 @@
         font-weight: 400;
         cursor: pointer;
         height: fit-content;
+        user-select: none;
+      }
+
+      .picked-word {
+        cursor: default !important;
+        background-color: #ccc;
+        user-select: none;
+        color: #ccc;
       }
 
       .words-to-pick-container {

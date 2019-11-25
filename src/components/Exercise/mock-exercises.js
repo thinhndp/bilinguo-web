@@ -10,7 +10,7 @@ const vieEngSentenceMakingExercise = {
   id: "vieEngSentenceMaking",
   requirement: "Viết mục này bằng tiếng Anh",
   question: "Tôi ăn con cua.",
-  wordsToPick: [ "the", "bear", "I", "animal", "eat", "crab", "mouse", "the", "spider" ],
+  wordsToPick: [ "the", "bear", "I", "animal", "eat", "crab", "mouse", "the", "spider",  ],
   answers: [ "I eat the crab." ]
 }
 
@@ -45,6 +45,6 @@ export const vieEngSentenceSelecting = "vieEngSentenceSelecting";
 export const exerciseList = [
   vieEngPictureSelectingExercise,
   vieEngSentenceSelectingExercise,
+  vieEngSentenceMakingExercise,
   engVieSentenceTranslatingExercise,
-  vieEngSentenceMakingExercise
 ]

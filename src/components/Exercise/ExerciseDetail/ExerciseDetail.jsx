@@ -32,6 +32,14 @@ const ExerciseDetail = props => {
             sendAnswer={sendAnswer}
           />
         );
+      case vieEngSentenceMaking:
+        return (
+          <VieEngSentenceMaking
+            exercise={exercise}
+            userAnswer={userAnswer}
+            sendAnswer={sendAnswer}
+          />
+        );
       default:
         return null;
     }
@@ -44,6 +52,34 @@ const ExerciseDetail = props => {
         {exercise.question ? exercise.question : ""}
       </div>
       <div className={classes["exercise-detail"]}>{renderExercise()}</div>
+    </div>
+  );
+};
+
+const VieEngSentenceMaking = props => {
+  const { exercise, userAnswer, sendAnswer } = props;
+  return (
+    <div className={classes["sentence-making-container"]}>
+      <div className={classes["line"] + " " + classes["line-1"]} />
+      <div className={classes["line"] + " " + classes["line-2"]} />
+      <div className={classes["answer-sentence-container"]}>
+        {
+          [].map(word => (
+            <div className={classes["word-container"]}>
+              {word}
+            </div>
+          ))
+        }
+      </div>
+      <div className={classes["words-to-pick-container"]}>
+        {
+          exercise.wordsToPick.map(word => (
+            <div className={classes["word-container"]}>
+              {word}
+            </div>
+          ))
+        }
+      </div>
     </div>
   );
 };

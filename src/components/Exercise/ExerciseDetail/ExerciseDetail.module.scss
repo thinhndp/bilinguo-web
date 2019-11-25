@@ -9,6 +9,63 @@
   .exercise-detail {
     flex: 1;
 
+    
+    .sentence-making-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 10px;
+      // background-color: chocolate;
+      
+      .word-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // text-align: center;
+        // line-height: 36px;
+        padding: 5px 10px;
+        margin: 5px 3px;
+        border-radius: 14px;
+        border: 2px solid #ccc;
+        color: #555;
+        font-size: 20px;
+        font-weight: 400;
+        cursor: pointer;
+        height: fit-content;
+      }
+
+      .words-to-pick-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0 0;
+        // justify-self: flex-end;
+      }
+
+      .answer-sentence-container {
+        height: 160px;
+        // background-color: cornflowerblue;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 10px;
+        min-width: 700px;
+      }
+
+      .line {
+        height: 2.5px;
+        background-color: #CCCCCC;
+        width: 100%;
+        position: absolute;
+        width: 700px;
+      }
+
+      .line-1 {
+        transform: translate(0, 52px);
+      }
+      .line-2 {
+        transform: translate(0, 132px);
+      }
+    }
+
     .sentence-selecting-container {
       display: flex;
       flex-direction: column;

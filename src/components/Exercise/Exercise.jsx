@@ -9,7 +9,7 @@ import { exerciseList } from './mock-exercises';
 const Exercise = () => {
   const [answered, setAnswered] = useState("unanswered");
   const [userAnswer, setUserAnswer] = useState("");
-  const [curExercise, setCurExercise] = useState(exerciseList[1]);
+  const [curExercise, setCurExercise] = useState(exerciseList[2]);
 
   const makeTyping = () => {
     if (answered !== "typing") {

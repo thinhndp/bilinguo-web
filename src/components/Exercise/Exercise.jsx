@@ -10,30 +10,36 @@ const Exercise = () => {
   const [answered, setAnswered] = useState("unanswered");
   const [userAnswer, setUserAnswer] = useState("");
   const [curExercise, setCurExercise] = useState(exerciseList[0]);
+  const [progressPercent, setProgressPercent] = useState(0);
+  const [sessionInfo, setSessionInfo] = useState({
+    correctCount: 0,
+    timeSpent: 30,
+    exerciseAnswers: []
+  });
 
-  const makeTyping = () => {
-    if (answered !== "typing") {
-      setAnswered("typing");
-    } else {
-      setAnswered("unanswered");
+  const loadNextExercise = () => {
+    const exerciseCount = exerciseList.length;
+    const curIndex = exerciseList.findIndex(exercise => exercise === curExercise);
+    if (curIndex + 1 >= exerciseCount) {
+      finishSession();
+      return;
     }
-  };
+    setCurExercise(exerciseList[curIndex + 1]);
+    // console.log(`${curIndex} ${exerciseCount} ${progressPercent}`);
+    setUserAnswer("");
+    setAnswered("unanswered");
+  }
 
-  const makeCorrect = () => {
-    if (answered !== "correct") {
-      setAnswered("correct");
-    } else {
-      setAnswered("unanswered");
-    }
-  };
+  const getProgressPercent = () => {
+    const exerciseCount = exerciseList.length;
+    const curIndex = exerciseList.findIndex(exercise => exercise === curExercise);
+    console.log((curIndex / exerciseCount) * 100);
+    return (curIndex / exerciseCount) * 100;
+  }
 
-  const makeIncorrect = () => {
-    if (answered !== "incorrect") {
-      setAnswered("incorrect");
-    } else {
-      setAnswered("unanswered");
-    }
-  };
+  const finishSession = () => {
+    console.log(sessionInfo);
+  }
 
   const handleAnswerChange = (answer) => {
     if (answered === "correct" || answered === "incorrect") {
@@ -49,12 +55,29 @@ const Exercise = () => {
   }
 
   const handleCheckClick = () => {
+    let isCorrect;
     if (userAnswer === curExercise.answers[0]) {
       setAnswered("correct");
+      isCorrect = true;
     }
     else {
       setAnswered("incorrect");
+      isCorrect = false;
     }
+    const exerciseCount = exerciseList.length;
+    const curIndex = exerciseList.findIndex(exercise => exercise === curExercise);
+    setProgressPercent(((curIndex + 1) / exerciseCount) * 100.0);
+    setSessionInfo({
+      ...sessionInfo,
+      correctCount: sessionInfo.correctCount + (isCorrect ? 1 : 0),
+      exerciseAnswers: [
+        ...sessionInfo.exerciseAnswers,
+        {
+          exercise: curExercise,
+          userAnswer: userAnswer
+        }
+      ]
+    });
   }
 
   return (
@@ -68,7 +91,7 @@ const Exercise = () => {
             </div>
             <div className={classes["progress-bar"]}>
               <Line
-                percent={50}
+                percent={progressPercent}
                 strokeWidth="2"
                 trailWidth="2"
                 strokeColor="#1CB0F6"
@@ -86,10 +109,10 @@ const Exercise = () => {
         </div>
         <div className={classes["footer"]}>
           { answered === "correct" ?
-              <CorrectFooter answered={answered} />
+              <CorrectFooter answered={answered} loadNextExercise={loadNextExercise}/>
               : ( answered === "incorrect" ? 
-                    <IncorrectFooter answered={answered} correctAnswer={curExercise.answers[0]} />
-                    : <UnansweredFooter answered={answered} handleCheckClick={handleCheckClick} />
+                    <IncorrectFooter answered={answered} correctAnswer={curExercise.answers[0]} loadNextExercise={loadNextExercise}/>
+                    : <UnansweredFooter answered={answered} handleCheckClick={handleCheckClick}/>
                 )
           }
         </div>
@@ -99,7 +122,7 @@ const Exercise = () => {
 };
 
 const CorrectFooter = props => {
-  const { answered } = props;
+  const { answered, loadNextExercise } = props;
   return (
     <div className={classes['answered-correct-footer']}>
       <div className={classes['info-and-button-container']}>
@@ -119,6 +142,7 @@ const CorrectFooter = props => {
           variant="success"
           size="lg"
           className={classes["button"] + " " + classes["success-button"]}
+          onClick={loadNextExercise}
         >
           Tiếp tục
         </Button>
@@ -128,7 +152,7 @@ const CorrectFooter = props => {
 }
 
 const IncorrectFooter = props => {
-  const { answered } = props;
+  const { answered, loadNextExercise } = props;
   return (
     <div className={classes['answered-incorrect-footer']}>
       <div className={classes['info-and-button-container']}>
@@ -149,6 +173,7 @@ const IncorrectFooter = props => {
           variant="danger"
           size="lg"
           className={classes["button"] + " " + classes["danger-button"]}
+          onClick={loadNextExercise}
         >
           Tiếp tục
         </Button>
@@ -168,6 +193,7 @@ const UnansweredFooter = props => {
             variant="outline-secondary"
             size="lg"
             className={classes["button"] + " " + classes["secondary-button"]}
+            onClick={props.handleCheckClick}
           >
             Bỏ qua
           </Button>

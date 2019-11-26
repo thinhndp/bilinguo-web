@@ -8,7 +8,7 @@ const vieEngSentenceSelectingExercise = {
 
 const vieEngSentenceMakingExercise = {
   id: "vieEngSentenceMaking",
-  requirement: "Viết mục này bằng tiếng Anh",
+  requirement: "Viết bằng tiếng Anh",
   question: "Tôi ăn con cua.",
   wordsToPick: [ "the", "bear", "I", "animal", "eat", "crab", "mouse", "the", "spider",  ],
   answers: [ "I eat the crab" ]
@@ -16,7 +16,7 @@ const vieEngSentenceMakingExercise = {
 
 const engVieSentenceTranslatingExercise = {
   id: "engVieSentenceTranslating",
-  requirement: "Viết mục này bằng tiếng Việt",
+  requirement: "Viết bằng tiếng Việt",
   question: "Girl",
   answers: [ "Cô gái.", "Con gái.", "Cô bé.", "Bé gái." ]
 }
@@ -47,4 +47,17 @@ export const exerciseList = [
   vieEngSentenceSelectingExercise,
   vieEngSentenceMakingExercise,
   engVieSentenceTranslatingExercise,
-]
+];
+
+export const mockSessionResult = {
+  correctCount: 2,
+  timeSpent: 30,
+  exerciseAnswers: [
+    { exercise: vieEngPictureSelectingExercise, userAnswer: "man", isCorrect: true },
+    { exercise: vieEngSentenceSelectingExercise, userAnswer: "I am a mouse.", isCorrect: false },
+    { exercise: vieEngSentenceMakingExercise, userAnswer: "I eat the crab", isCorrect: true },
+    { exercise: engVieSentenceTranslatingExercise, userAnswer: "Cooasdo", isCorrect: false },
+    { exercise: vieEngSentenceMakingExercise, userAnswer: "I eat the crab", isCorrect: true },
+    { exercise: engVieSentenceTranslatingExercise, userAnswer: "Cooasdo", isCorrect: false }
+  ]
+}

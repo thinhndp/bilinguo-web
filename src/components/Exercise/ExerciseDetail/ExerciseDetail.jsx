@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./ExerciseDetail.module.scss";
 import uuid from "uuid";
 import {
@@ -16,7 +16,7 @@ const ExerciseDetail = props => {
   };
 
   const renderExercise = () => {
-    switch (exercise.id) {
+    switch (exercise.type) {
       case vieEngPictureSelecting:
         return (
           <VieEngPictureSelecting
@@ -101,17 +101,35 @@ const VieEngSentenceMaking = props => {
       return;
     }
     setAnswerSentence([...answerSentence, nWord]);
+    // setTimeout(() => {console.log(answerSentence);}, 5000);
+    // console.log(answerSentence);
 
-    let newUserAnswer = userAnswer;
-    newUserAnswer += newUserAnswer === "" ? nWord.word : " " + nWord.word;
-    sendAnswer(newUserAnswer);
+    // let newUserAnswer = userAnswer;
+    // newUserAnswer += newUserAnswer === "" ? nWord.word : " " + nWord.word;
+    // sendAnswer(newUserAnswer);
+    // sendAnswer(newUserAnswer);
   };
 
   const deleteWordFromAnswerSentence = wordToDelete => {
     setAnswerSentence(
       answerSentence.filter(word => word.id !== wordToDelete.id)
     );
+    console.log(answerSentence);
+    // sendAnswer(createStringFromAnswerSentence());
   };
+
+  useEffect(() => {
+    sendAnswer(createStringFromAnswerSentence());
+  }, [answerSentence])
+
+  const createStringFromAnswerSentence = () => {
+    let str = "";
+    for(let wordObj of answerSentence) {
+      str = str + wordObj.word + " ";
+    }
+    console.log(`"${str}"`)
+    return str.slice(0, str.length - 1);
+  }
 
   return (
     <div className={classes["sentence-making-container"]}>

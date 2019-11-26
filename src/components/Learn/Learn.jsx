@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Learn.module.scss";
 import Exercise from '../Exercise/Exercise';
 import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from "../../mock-data";
+import { useHistory } from 'react-router-dom';
 
 const Learn = props => {
   return (
@@ -92,6 +93,10 @@ const Learn = props => {
 };
 
 const Course = props => {
+  let history = useHistory();
+  const handleExerciseClick = () => {
+    history.push("/exercise");
+  }
   return (
     <div className={classes["course"]}>
       {props.courseData.level > 0 ? (
@@ -111,7 +116,10 @@ const Course = props => {
       {props.courseData.rows.map(row => (
         <div className={classes["course-row"]}>
           {row.map(exercise => (
-            <div className={classes["exercise-container"]}>
+            <div
+              className={classes["exercise-container"]}
+              onClick={handleExerciseClick}
+            >
               <div className={classes["exercise-illustration"]}>
                 <div
                   className={classes["exercise-background-circle"]}

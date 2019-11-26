@@ -1,5 +1,6 @@
 const vieEngSentenceSelectingExercise = {
-  id: "vieEngSentenceSelecting",
+  id: "0",
+  type: "vieEngSentenceSelecting",
   requirement: "Chọn nghĩa đúng",
   question: "Tôi là con bò",
   choices: [ "I am a mouse.", "I am a cow.", "I am a journalist." ],
@@ -7,7 +8,8 @@ const vieEngSentenceSelectingExercise = {
 }
 
 const vieEngSentenceMakingExercise = {
-  id: "vieEngSentenceMaking",
+  id: "1",
+  type: "vieEngSentenceMaking",
   requirement: "Viết bằng tiếng Anh",
   question: "Tôi ăn con cua.",
   wordsToPick: [ "the", "bear", "I", "animal", "eat", "crab", "mouse", "the", "spider",  ],
@@ -15,7 +17,8 @@ const vieEngSentenceMakingExercise = {
 }
 
 const engVieSentenceTranslatingExercise = {
-  id: "engVieSentenceTranslating",
+  id: "2",
+  type: "engVieSentenceTranslating",
   requirement: "Viết bằng tiếng Việt",
   question: "Girl",
   answers: [ "Cô gái.", "Con gái.", "Cô bé.", "Bé gái." ]
@@ -26,7 +29,20 @@ const vieEngListeningAndSentenceMakingExercise = {
 }
 
 const vieEngPictureSelectingExercise = {
-  id: "vieEngPictureSelecting",
+  id: "3",
+  type: "vieEngPictureSelecting",
+  requirement: "Đâu là \"đàn ông\"?",
+  imagesToPick: [
+    { index: 1, word: "boy", imgUrl: "exercise-images/boy.png" },
+    { index: 2, word: "man", imgUrl: "exercise-images/man.png" },
+    { index: 3, word: "cat", imgUrl: "exercise-images/cat.png" }
+  ],
+  answers: [ "man" ]
+}
+
+const vieEngPictureSelectingExercise2 = {
+  id: "4",
+  type: "vieEngPictureSelecting",
   requirement: "Đâu là \"đàn ông\"?",
   imagesToPick: [
     { index: 1, word: "boy", imgUrl: "exercise-images/boy.png" },
@@ -47,6 +63,7 @@ export const exerciseList = [
   vieEngSentenceSelectingExercise,
   vieEngSentenceMakingExercise,
   engVieSentenceTranslatingExercise,
+  vieEngPictureSelectingExercise2,
 ];
 
 export const mockSessionResult = {

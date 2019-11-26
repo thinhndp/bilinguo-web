@@ -7,25 +7,36 @@ import {
   buildStyles,
   CircularProgressbarWithChildren
 } from "react-circular-progressbar";
+import { useLocation, useHistory } from "react-router-dom";
 
 const ExerciseResult = (props) => {
   const [streakProgress, setStreakProgress] = useState(0);
   const [modalShow, setModalShow] = useState(false);
 
-  const sessionResult = mockSessionResult;
+  const location = useLocation();
+  const history = useHistory();
+
+  const sessionResult = location.state.sessionInfo ? location.state.sessionInfo : mockSessionResult;
 
   useEffect(() => {
     setStreakProgress(50);
+    
+    console.log(location.state.sessionInfo);
+    console.log(location.state);
   }, []);
 
   const getAccuracy = () => {
     const correctCount = sessionResult.correctCount;
     const questionCount = sessionResult.exerciseAnswers.length;
-    return Number((correctCount / questionCount) * 100).toFixed(2);
+    return Number((correctCount / questionCount) * 100).toFixed(0);
   };
 
   const handleModalCloseClick = () => {
     setModalShow(false);
+  }
+
+  const handleFinishClick = () => {
+    history.push("/");
   }
 
   return (
@@ -135,6 +146,7 @@ const ExerciseResult = (props) => {
                   className={
                     classes["button"] + " " + classes["success-button"]
                   }
+                  onClick={handleFinishClick}
                 >
                   Kết thúc bài học
                 </Button>

@@ -5,6 +5,7 @@ import { Line } from "rc-progress";
 import { Button } from "react-bootstrap";
 import ExerciseDetail from './ExerciseDetail/ExerciseDetail';
 import { exerciseList } from './mock-exercises';
+import { useHistory } from 'react-router-dom';
 
 const Exercise = () => {
   const [answered, setAnswered] = useState("unanswered");
@@ -30,6 +31,8 @@ const Exercise = () => {
     setAnswered("unanswered");
   }
 
+  let history = useHistory();
+
   const getProgressPercent = () => {
     const exerciseCount = exerciseList.length;
     const curIndex = exerciseList.findIndex(exercise => exercise === curExercise);
@@ -38,7 +41,8 @@ const Exercise = () => {
   }
 
   const finishSession = () => {
-    console.log(sessionInfo);
+    // console.log(sessionInfo);
+    history.push("/exercise/result", { sessionInfo: sessionInfo });
   }
 
   const handleAnswerChange = (answer) => {
@@ -52,6 +56,10 @@ const Exercise = () => {
     else {
       setAnswered("typing")
     }
+  }
+
+  const handleCloseClick = () => {
+    history.push("/");
   }
 
   const handleCheckClick = () => {
@@ -74,7 +82,8 @@ const Exercise = () => {
         ...sessionInfo.exerciseAnswers,
         {
           exercise: curExercise,
-          userAnswer: userAnswer
+          userAnswer: userAnswer,
+          isCorrect: isCorrect
         }
       ]
     });
@@ -82,11 +91,14 @@ const Exercise = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-      {/* <div>Test: {userAnswer}</div> */}
+      {/* <div>Test: "{userAnswer}"</div> */}
       <div className={classes["container"]}>
         <div className={classes["header"]}>
           <div className={classes["progress-bar-container"]}>
-            <div className={classes["close-button"]}>
+            <div
+              className={classes["close-button"]}
+              onClick={handleCloseClick}
+            >
               <FaTimes size={28} color="#bbbbbb"></FaTimes>
             </div>
             <div className={classes["progress-bar"]}>

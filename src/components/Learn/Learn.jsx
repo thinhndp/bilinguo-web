@@ -1,10 +1,12 @@
 import React from "react";
 import classes from "./Learn.module.scss";
-import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../mock-data';
+import Exercise from '../Exercise/Exercise';
+import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from "../../mock-data";
+import { useHistory } from 'react-router-dom';
 
 const Learn = props => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#ddd", zIndex: -2 }}>
       {/* <img
         className={classes["cai-anh-dang-sau"]}
         src={require("../../assets/field.png")}
@@ -12,7 +14,7 @@ const Learn = props => {
       /> */}
       {/* <div className={classes['cai-anh-dang-sau']}></div> */}
       <img
-        className={classes["imgage"]}
+        className={classes["image"]}
         src={require("../../assets/field17edited.png")}
         alt="field"
       />
@@ -91,6 +93,10 @@ const Learn = props => {
 };
 
 const Course = props => {
+  let history = useHistory();
+  const handleExerciseClick = () => {
+    history.push("/exercise");
+  }
   return (
     <div className={classes["course"]}>
       {props.courseData.level > 0 ? (
@@ -110,7 +116,10 @@ const Course = props => {
       {props.courseData.rows.map(row => (
         <div className={classes["course-row"]}>
           {row.map(exercise => (
-            <div className={classes["exercise-container"]}>
+            <div
+              className={classes["exercise-container"]}
+              onClick={handleExerciseClick}
+            >
               <div className={classes["exercise-illustration"]}>
                 <div
                   className={classes["exercise-background-circle"]}

@@ -1,8 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import classes from './Course.module.scss';
 
-function Course(props) {
+const Course = props => {
+  let history = useHistory();
+  const handleExerciseClick = () => {
+    history.push("/exercise");
+  }
   return (
     <div className={classes["course"]}>
       {props.courseData.level > 0 ? (
@@ -22,7 +27,10 @@ function Course(props) {
       {props.courseData.rows.map(row => (
         <div className={classes["course-row"]}>
           {row.map(exercise => (
-            <div className={classes["exercise-container"]}>
+            <div
+              className={classes["exercise-container"]}
+              onClick={handleExerciseClick}
+            >
               <div className={classes["exercise-illustration"]}>
                 <div
                   className={classes["exercise-background-circle"]}

@@ -23,10 +23,20 @@ import React from 'react';
 //     component: <Showcase />
 //   }
 import PageHome from './layout/pages/PageHome/PageHome';
+import PageExercise from './layout/pages/PageExercise/PageExercise';
 import PageExerciseMenu from './layout/pages/PageExerciseMenu/PageExerciseMenu';
+import PageExerciseResult from './layout/pages/PageExerciseResult/PageExerciseResult';
 import PageProfileAchievements from './layout/pages/PageProfileAchievements/PageProfileAchievements';
 
 export const routes = [
+  {
+    path: '/exercise/result',
+    component: <PageExerciseResult />
+  },
+  {
+    path: '/exercise',
+    component: <PageExercise />
+  },
   {
     path: '/learn',
     component: <PageExerciseMenu />

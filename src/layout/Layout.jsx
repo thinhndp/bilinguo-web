@@ -1,6 +1,6 @@
 import React from 'react';
 import { routes } from '../routes';
-import MyNavbar from './components/MyNavbar/MyNavbar';
+// import MyNavbar from './components/MyNavbar/MyNavbar';
 import { Switch, Route } from 'react-router-dom';
 
 function Layout() {
@@ -14,8 +14,8 @@ function Layout() {
 
   return (
     <div>
-      <MyNavbar></MyNavbar>
-      <div style={{paddingBottom: 1000}}>
+      {/* <MyNavbar></MyNavbar> */}
+      <div style={{}}>
         <Switch>
           { renderRouter() }
         </Switch>

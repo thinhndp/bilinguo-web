@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Course from './components/Course';
+import MyNavbar from '../../components/MyNavbar/MyNavbar';
 
 import classes from './PageExerciseMenu.module.scss';
 
@@ -8,7 +9,8 @@ import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../../mock
 
 function PageExerciseMenu(props) {
   return (
-    <div>
+    <div style={{background: "#ddd", paddingBottom: 100}}>
+      <MyNavbar />
       {/* <img
         className={classes["cai-anh-dang-sau"]}
         src={require("../../assets/field.png")}

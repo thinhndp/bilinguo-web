@@ -1,24 +1,28 @@
 import React from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import Showcase from './components/Showcase/Showcase';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { StoreProvider } from 'easy-peasy';
+import { BrowserRouter } from 'react-router-dom';
 
-import { routes } from './routes';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import './styles/global.scss';
+import './styles/bootstrap.min.css';
+
+import { store } from './store';
+import Layout from './layout/Layout';
+// import Showcase from './components/Showcase/Showcase';
 
 function App() {
+  // return (
+  //   <div style={{ backgroundColor: "#ddd", zIndex: -2 }}>
+  //     <Showcase></Showcase>
+  //   </div>
+  // );
   return (
-    <BrowserRouter>
-      <div>
-        <Switch>
-          { routes.map(({ path, component }) => (
-            <Route path={path}>
-              {component}
-            </Route>
-          )) }
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <StoreProvider store={store}>
+      <BrowserRouter>
+        <Layout></Layout>
+      </BrowserRouter>
+    </StoreProvider>
   );
 }
 

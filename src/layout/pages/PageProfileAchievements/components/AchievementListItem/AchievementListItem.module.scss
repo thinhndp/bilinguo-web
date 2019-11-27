@@ -1,0 +1,55 @@
+.achievement {
+  border-top: 2px solid #ddd;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: row;
+
+  .achievement-icon {
+    width: 77px;
+    height: 96px;
+    position: relative;
+
+    .achievement-stars {
+      position: absolute;
+      bottom: 26px;
+      left: 0;
+      width: calc(100% - 1px); // Because of the asset
+      height: 15px;
+      padding: 0 8px;
+      display: flex;
+      justify-content: space-between;
+      // background: red;
+
+      .achievement-star-one, .achievement-star-two, .achievement-star-three {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        // background: green;
+      }
+
+      .achievement-star-two {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.black-star, .gold-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.black-star {
+  opacity: 0.2;
+  background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star_black.svg) no-repeat;
+  background-size: contain;
+}
+
+.gold-star {
+  opacity: 1;
+  background: url(//d35aaqx5ub95lt.cloudfront.net/images/achievements/star.svg) no-repeat;
+  background-size: contain;
+}

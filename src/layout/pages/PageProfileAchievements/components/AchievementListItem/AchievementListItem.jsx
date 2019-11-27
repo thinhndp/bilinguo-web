@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Line } from 'rc-progress';
+
 import classes from './AchievementListItem.module.scss';
 
 function AchievementListItem(props) {
@@ -41,7 +43,17 @@ function AchievementListItem(props) {
           {props.description}
         </div>
         <div className={classes['achievement-detail-progressbar']}>
-        {props.currentProgress}/{props.totalProgress}
+          <div className={classes['progress-bar']}>
+            <Line
+              percent={(props.currentProgress/props.totalProgress)*100}
+              strokeWidth="2"
+              strokeColor="orange"
+              trailWidth="2"
+            ></Line>
+          </div>
+          <div className={classes['progress-text']}>
+            {props.currentProgress}/{props.totalProgress}
+          </div>
         </div>
       </div>
     </div>

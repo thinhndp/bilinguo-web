@@ -11,7 +11,7 @@ const ACHIEVEMENTS_MOCKDATA = [
     iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-flame.svg",
     star: 3,
     totalProgress: 2,
-    currentProgress: 0,
+    currentProgress: 2,
   },
   {
     id: uuid(),
@@ -20,7 +20,7 @@ const ACHIEVEMENTS_MOCKDATA = [
     iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-swords.svg",
     star: 1,
     totalProgress: 10,
-    currentProgress: 4,
+    currentProgress: 8,
   },
   {
     id: uuid(),
@@ -37,7 +37,7 @@ const ACHIEVEMENTS_MOCKDATA = [
     iconUrl: "//d35aaqx5ub95lt.cloudfront.net/images/achievements/achievement-medal.svg",
     star: 1,
     totalProgress: 100,
-    currentProgress: 0,
+    currentProgress: 50,
   },
   {
     id: uuid(),

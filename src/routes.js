@@ -30,12 +30,16 @@ import PageProfileAchievements from './layout/pages/PageProfileAchievements/Page
 
 export const routes = [
   {
-    path: '/exercise/result',
-    component: <PageExerciseResult />
+    path: '/',
+    component: <PageHome />
   },
   {
     path: '/exercise',
     component: <PageExercise />
+  },
+  {
+    path: '/exercise/result',
+    component: <PageExerciseResult />
   },
   {
     path: '/learn',
@@ -44,9 +48,5 @@ export const routes = [
   {
     path: '/profile/achievements',
     component: <PageProfileAchievements />
-  },
-  {
-    path: '/',
-    component: <PageHome />
   },
 ];

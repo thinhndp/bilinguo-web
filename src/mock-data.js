@@ -6,6 +6,7 @@ const coBan1 = {
   unlockedIconUrl: 'unlocked-exercise-icons/co-ban-1.png',
   backgroundColor: '#78C800',
   levelReached: 2,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -16,6 +17,7 @@ const coBan2 = {
   unlockedIconUrl: 'unlocked-exercise-icons/co-ban-2.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -26,6 +28,7 @@ const cumTu = {
   unlockedIconUrl: 'unlocked-exercise-icons/cum-tu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -36,6 +39,7 @@ const monAn = {
   unlockedIconUrl: 'unlocked-exercise-icons/mon-an.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -46,6 +50,7 @@ const dongVat = {
   unlockedIconUrl: 'unlocked-exercise-icons/dong-vat.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -56,6 +61,7 @@ const soNhieu = {
   unlockedIconUrl: 'unlocked-exercise-icons/so-nhieu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -66,6 +72,7 @@ const soHuu = {
   unlockedIconUrl: 'unlocked-exercise-icons/so-huu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -76,6 +83,7 @@ const daiTuKhachQuan = {
   unlockedIconUrl: 'unlocked-exercise-icons/dai-tu-khach-quan.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -86,6 +94,7 @@ const quanAo = {
   unlockedIconUrl: 'unlocked-exercise-icons/quan-ao.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -96,6 +105,7 @@ const dongTu = {
   unlockedIconUrl: 'unlocked-exercise-icons/dong-tu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -106,6 +116,7 @@ const mauSac = {
   unlockedIconUrl: 'unlocked-exercise-icons/mau-sac.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: true,
   levelProgress: 0,
   exercises: [],
 }
@@ -114,8 +125,10 @@ const cauHoi = {
   id: uuid(),
   name: 'Câu hỏi',
   unlockedIconUrl: 'unlocked-exercise-icons/cau-hoi.png',
+  lockedIconUrl: 'locked-exercise-icons/cau-hoi.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: false,
   levelProgress: 0,
   exercises: [],
 }
@@ -124,8 +137,10 @@ const lienTu = {
   id: uuid(),
   name: 'Liên từ',
   unlockedIconUrl: 'unlocked-exercise-icons/lien-tu.png',
+  lockedIconUrl: 'locked-exercise-icons/lien-tu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: false,
   levelProgress: 0,
   exercises: [],
 }
@@ -134,8 +149,10 @@ const gioiTu = {
   id: uuid(),
   name: 'Giới từ',
   unlockedIconUrl: 'unlocked-exercise-icons/gioi-tu.png',
+  lockedIconUrl: 'locked-exercise-icons/gioi-tu.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: false,
   levelProgress: 0,
   exercises: [],
 }
@@ -144,8 +161,10 @@ const thoiGian = {
   id: uuid(),
   name: 'Thời gian',
   unlockedIconUrl: 'unlocked-exercise-icons/thoi-gian.png',
+  lockedIconUrl: 'locked-exercise-icons/thoi-gian.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: false,
   levelProgress: 0,
   exercises: [],
 }
@@ -154,8 +173,10 @@ const giaDinh = {
   id: uuid(),
   name: 'Gia Đình',
   unlockedIconUrl: 'unlocked-exercise-icons/gia-dinh.png',
+  lockedIconUrl: 'locked-exercise-icons/gia-dinh.png',
   backgroundColor: '#1CB0F6',
   levelReached: 1,
+  isUnlocked: false,
   levelProgress: 0,
   exercises: [],
 }

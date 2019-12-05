@@ -126,8 +126,8 @@ const Course = props => {
                   style={{ backgroundColor: exercise.backgroundColor }}
                 >
                   <img
-                    className={classes["exercise-icon"]}
-                    src={require("../../assets/" + exercise.unlockedIconUrl)}
+                    className={classes["exercise-icon"] + " " + exercise.isUnlocked ? classes["unlocked-exercise-icon"] : ""}
+                    src={require("../../assets/" + exercise.isUnlocked ? exercise.unlockedIconUrl : exercise.lockedIconUrl)}
                     alt="logo"
                   ></img>
                 </div>

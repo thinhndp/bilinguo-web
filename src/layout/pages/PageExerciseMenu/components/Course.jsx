@@ -29,31 +29,39 @@ const Course = props => {
           {row.map(exercise => (
             <div
               className={classes["exercise-container"]}
-              onClick={handleExerciseClick}
+              onClick={exercise.isUnlocked ? handleExerciseClick : null}
             >
               <div className={classes["exercise-illustration"]}>
                 <div
                   className={classes["exercise-background-circle"]}
-                  style={{ backgroundColor: exercise.backgroundColor }}
+                  style={{ backgroundColor: exercise.isUnlocked ? exercise.backgroundColor : "#eee" }}
                 >
                   <img
-                    className={classes["exercise-icon"]}
-                    src={require("../../../../assets/" + exercise.unlockedIconUrl)}
+                    className={exercise.isUnlocked ? classes["exercise-icon"] : classes["locked-exercise-icon"]}
+                    src={require("../../../../assets/" +  (exercise.isUnlocked ? exercise.unlockedIconUrl : exercise.lockedIconUrl))}
                     alt="logo"
                   ></img>
+                  {/* <img
+                  className={classes["exercise-icon"] + " " + exercise.isUnlocked ? classes["unlocked-exercise-icon"] : ""}
+                    src={require("../../../../assets/" + exercise.isUnlocked ? exercise.unlockedIconUrl : exercise.lockedIconUrl)}
+                    alt="logo"
+                  ></img> */}
                 </div>
-                <div className={classes["honey-you-should-see-me-in-a-crown"]}>
-                  <img
-                    src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown.svg"
-                    alt="crown"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                  <div className={classes["level-reached"]}>
-                    {exercise.levelReached}
-                  </div>
-                </div>
+                {
+                  exercise.isUnlocked ?
+                    <div className={classes["honey-you-should-see-me-in-a-crown"]}>
+                      <img
+                        src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown.svg"
+                        alt="crown"
+                        style={{ width: "50px", height: "50px" }}
+                      />
+                      <div className={classes["level-reached"]}>
+                        {exercise.levelReached}
+                      </div>
+                    </div>
+                  : null}
               </div>
-              <div className={classes["exercise-name"]}>{exercise.name}</div>
+              <div className={exercise.isUnlocked ? classes["exercise-name"] : classes["locked-exercise-name"]}>{exercise.name}</div>
             </div>
           ))}
         </div>

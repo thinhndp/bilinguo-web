@@ -78,4 +78,15 @@ export const mockPosts = [
     upvoteCount: 2,
     downvoteCount: 263,
   },
+  {
+    id: 'post03',
+    title: 'Tôi thấy hiện tượng lạ',
+    author: mockUsers[2],
+    topic: mockTopics[4],
+    postedTime: '1 thập kỉ',
+    content: 'Lúc đó là tháng giêng năm 2003. Tự nhiên tôi ngồi ở nhà ở trên Phao sần pa lay, tự nhiên tôi thấy một hiện tượng lạ.',
+    commentCount: 20,
+    upvoteCount: 2,
+    downvoteCount: 263,
+  },
 ];

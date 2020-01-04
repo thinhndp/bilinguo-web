@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FiMessageSquare, FiThumbsUp, FiThumbsDown } from 'react-icons/fi';
+import { FiMessageSquare, FiThumbsUp, FiThumbsDown, FiStar, FiList, FiCheck } from 'react-icons/fi';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import classes from './PageForum.module.scss';
 
-import { mockPosts } from './forum-mock-data';
+import { mockPosts, mockTopics } from './forum-mock-data';
 
 const PageForum = () => {
   const getPostsToDisplay = () => {
@@ -69,7 +69,35 @@ const PageForum = () => {
           </div>
           <div className={classes['topics-section']}>
             <div className={classes['section-name']}>Chủ đề</div>
-            <div className={classes['topics-card']}></div>
+            <div className={classes['topics-card']}>
+              <div className={classes['topic-group']}>
+                <FiList className={classes['icon']}></FiList>
+                <div className={classes['topic-name']}>Tất cả bài viết</div>
+                <FiCheck
+                  className={classes['check-icon']}
+                ></FiCheck>
+              </div>
+              <div className={classes['topic-group']}>
+                <FiStar className={classes['icon']}></FiStar>
+                <div className={classes['topic-name']}>Đang theo dõi</div>
+              </div>
+              <div className={classes['line']}></div>
+              {
+                mockTopics.map(topic => (
+                  <div className={classes['topic-group']}>
+                    <div className={classes['dat-circle-container']}>
+                      <div
+                        className={classes['dat-circle']}
+                        style={{
+                          backgroundColor: topic.backgroundColor
+                        }}
+                      ></div>
+                    </div>
+                    <div className={classes['topic-name']}>{topic.name}</div>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>

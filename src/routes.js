@@ -27,6 +27,7 @@ import PageExercise from './layout/pages/PageExercise/PageExercise';
 import PageExerciseMenu from './layout/pages/PageExerciseMenu/PageExerciseMenu';
 import PageExerciseResult from './layout/pages/PageExerciseResult/PageExerciseResult';
 import PageProfileAchievements from './layout/pages/PageProfileAchievements/PageProfileAchievements';
+import PageForum from './layout/pages/PageForum/PageForum';
 
 export const routes = [
   {
@@ -48,5 +49,9 @@ export const routes = [
   {
     path: '/profile/achievements',
     component: <PageProfileAchievements />
+  },
+  {
+    path: '/forum',
+    component: <PageForum />
   },
 ];

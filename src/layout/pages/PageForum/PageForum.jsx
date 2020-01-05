@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import { FiMessageSquare, FiThumbsUp, FiThumbsDown, FiStar, FiList, FiCheck } from 'react-icons/fi';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButtonDropdown,
+  Input,
+  Button,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+ } from 'reactstrap';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import classes from './PageForum.module.scss';
@@ -7,6 +18,10 @@ import classes from './PageForum.module.scss';
 import { mockPosts, mockTopics } from './forum-mock-data';
 
 const PageForum = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
+
   const getPostsToDisplay = () => {
     return mockPosts;
   }
@@ -18,6 +33,38 @@ const PageForum = () => {
         <div className={classes['posts-and-topics-container']}>
           <div className={classes['posts-section']}>
             <div className={classes['section-name']}>Bài viết</div>
+            <div className={classes['search-bar-and-post-button']}>
+              <InputGroup className={classes['input-group']}>
+                <InputGroupButtonDropdown addonType="prepend" isOpen={dropdownOpen} toggle={toggleDropDown}>
+                  <DropdownToggle
+                    outline 
+                    caret
+                    className={classes['dd-button']}
+                  >
+                    Sắp xếp theo
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>Header</DropdownItem>
+                    <DropdownItem disabled>Action</DropdownItem>
+                    <DropdownItem>Another Action</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>Another Action</DropdownItem>
+                  </DropdownMenu>
+                </InputGroupButtonDropdown>
+                <Input
+                  className={classes['search-field']}
+                  placeholder="Gõ từ khóa để tìm kiếm"
+                />
+              </InputGroup>
+              <Button
+                variant="primary"
+                size="lg"
+                className={classes["button"] + " " + classes["primary-button"]}
+                onClick={() => {}}
+              >
+                Đăng bài
+              </Button>
+            </div>
             {
               getPostsToDisplay().map(post => (
                 <div className={classes['post-card']}>

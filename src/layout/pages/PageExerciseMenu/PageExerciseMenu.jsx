@@ -9,7 +9,8 @@ import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../../mock
 
 function PageExerciseMenu(props) {
   return (
-    <div style={{background: "#ddd", paddingBottom: 100}}>
+    <div style={{background: "#EAEFF9", paddingBottom: 100}}>
+      {/* ddd */}
       <MyNavbar />
       {/* <img
         className={classes["cai-anh-dang-sau"]}
@@ -17,11 +18,11 @@ function PageExerciseMenu(props) {
         alt="field"
       /> */}
       {/* <div className={classes['cai-anh-dang-sau']}></div> */}
-      <img
+      {/* <img
         className={classes["imgage"]}
         src={require("../../../assets/field17edited.png")}
         alt="field"
-      />
+      /> */}
       <div className={classes["exercises-and-may-cai-ben-phai-container"]}>
         <div className={classes["exercises-container"]}>
           <Course courseData={exerciseGroupLvl0}></Course>

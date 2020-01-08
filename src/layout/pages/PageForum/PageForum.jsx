@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FiMessageSquare, FiThumbsUp, FiThumbsDown, FiStar, FiList, FiCheck } from 'react-icons/fi';
 import {
   InputGroup,
-  InputGroupAddon,
   InputGroupButtonDropdown,
   Input,
   Button,
@@ -99,15 +98,15 @@ const PageForum = () => {
                   <div className={classes['activities-column']}>
                     <div className={classes['activity-container']}>
                       <FiMessageSquare className={classes['icon']}></FiMessageSquare>
-                      <div className={classes['subtext-4']}>{post.commentCount} Bình luận</div>
+                      <div className={classes['subtext-4']}>{post.commentCount}</div>
                     </div>
                     <div className={classes['activity-container']}>
                       <FiThumbsUp className={classes['icon']}></FiThumbsUp>
-                      <div className={classes['subtext-4']}>{post.upvoteCount} Likes</div>
+                      <div className={classes['subtext-4']}>{post.upvoteCount}</div>
                     </div>
                     <div className={classes['activity-container']}>
                       <FiThumbsDown className={classes['icon']}></FiThumbsDown>
-                      <div className={classes['subtext-4']}>{post.downvoteCount} Dislikes</div>
+                      <div className={classes['subtext-4']}>{post.downvoteCount}</div>
                     </div>
                   </div>
                 </div>

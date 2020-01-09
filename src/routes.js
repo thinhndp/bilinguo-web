@@ -9,6 +9,7 @@ import PageForum from './layout/pages/PageForum/PageForum';
 import PagePost from './layout/pages/PagePost/PagePost';
 import PageShop from './layout/pages/PageShop/PageShop';
 import PageTutors from './layout/pages/PageTutors/PageTutors';
+import PageTutorDetail from './layout/pages/PageTutorDetail/PageTutorDetail';
 
 export const routes = [
   {
@@ -46,5 +47,9 @@ export const routes = [
   {
     path: '/tutors',
     component: <PageTutors />
+  },
+  {
+    path: '/tutors/123',
+    component: <PageTutorDetail />
   },
 ];

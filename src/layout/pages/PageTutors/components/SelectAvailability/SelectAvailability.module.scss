@@ -1,0 +1,30 @@
+.select-container {
+  padding: 5px 20px;
+}
+
+.select-section {
+  margin-bottom: 10px;
+
+  .select-section-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .select-section-content {
+    .time-of-day-button {
+      width: 120px;
+      font-weight: bold;
+      color: #444;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .day-of-week-button {
+      font-weight: bold;
+      color: #444;
+    }
+  }
+}

@@ -29,6 +29,7 @@ import PageExerciseResult from './layout/pages/PageExerciseResult/PageExerciseRe
 import PageProfileAchievements from './layout/pages/PageProfileAchievements/PageProfileAchievements';
 import PageForum from './layout/pages/PageForum/PageForum';
 import PagePost from './layout/pages/PagePost/PagePost';
+import PageShop from './layout/pages/PageShop/PageShop';
 
 export const routes = [
   {
@@ -58,5 +59,9 @@ export const routes = [
   {
     path: '/post/:postId',
     component: <PagePost />
+  },
+  {
+    path: '/shop',
+    component: <PageShop />
   },
 ];

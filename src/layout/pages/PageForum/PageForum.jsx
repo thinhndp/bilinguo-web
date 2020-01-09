@@ -34,7 +34,7 @@ const PageForum = () => {
   //responsive
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-  const isMobile = useMediaQuery({ maxDeviceWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     if (!localStorage.getItem('posts')) {

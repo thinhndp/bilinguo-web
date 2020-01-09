@@ -7,6 +7,9 @@ import './App.css';
 import './styles/global.scss';
 import './styles/bootstrap.min.css';
 
+// InputRange css
+// import 'react-input-range/lib/css/index.css'
+
 import { store } from './store';
 import Layout from './layout/Layout';
 // import Showcase from './components/Showcase/Showcase';

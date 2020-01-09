@@ -1,7 +1,5 @@
 .page-body {
   min-height: 100vh;
-  padding: 100px 0 50px;
-  background-color: #EAEFF9;
 
   .post-and-stat-container {
     max-width: 1140px;
@@ -438,6 +436,7 @@
   }
 }
 
+
 .seperator-vertical {
   height: 16px;
 }
@@ -448,4 +447,137 @@
 
 .downvote-color {
   color: #F6621C !important;
+}
+
+.unset-shadow {
+  box-shadow: unset !important;
+}
+
+.page-body-destop {
+  padding: 100px 0 50px;
+  background-color: #EAEFF9;
+}
+
+.page-body-not-destop {
+  padding: 80px 0 0;
+  background-color: white;
+}
+
+.pl-40 {
+  padding-left: 40px !important;
+}
+
+.pl-20 {
+  padding-left: 20px !important;
+}
+
+.line-m-10 {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.user-and-time-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+
+  .profile-picture {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+  }
+
+  .username-and-time {
+    display: flex;
+    flex-direction: column;
+
+    .username {
+      font-size: 20px;
+      font-weight: bold;
+      // color: #555;
+      color: #1cb0f6;
+      cursor: pointer;
+      margin-right: 6px;
+    }
+
+    .subtext-2 {
+      //for posted time
+      font-size: 16px;
+      font-weight: 600;
+      color: #999;
+    }
+  }
+}
+
+.comment-votes-section-row {
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+  font-size: 1.4rem;
+  font-weight: 600;
+  // margin: 0 10px;
+  min-width: 46px;
+
+  .vote {
+    color: #bec3c9;
+    cursor: pointer;
+  }
+
+  .vote:hover {
+    color: #606770;
+  }
+
+  .vote-count {
+    font-size: 1rem;
+    color: #6a737c;
+    margin: 0 6px;
+    line-height: normal;
+    user-select: none;
+  }
+}
+
+.flex-dir-col {
+  flex-direction: column !important;
+}
+
+.m-top-unset {
+  margin-top: unset !important;
+}
+
+.votes-n-topic-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  .votes-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vote {
+    color: #bec3c9;
+    cursor: pointer;
+  }
+
+  .vote:hover {
+    color: #606770;
+  }
+
+  .vote-count {
+    font-size: 1.4rem;
+    margin: 0 10px;
+    color: #6a737c;
+    user-select: none;
+  }
 }

@@ -8,3 +8,12 @@ body {
       max-width: 1300px !important;
   }
 }
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  border-radius: 15px !important;
+}

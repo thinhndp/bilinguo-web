@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Badge, Button, Container, Dropdown } from 'react-bootstrap';
-import InputRange from 'react-input-range';
+import YouTube from 'react-youtube';
 
 import classes from './PageTutorDetail.module.scss';
 
@@ -118,6 +118,15 @@ const TUTOR_DETAIL = {
 }
 
 function PageTutorDetail() {
+  
+  const opts = {
+    height: '100%',
+    width: '100%',
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 0
+    }
+  };
+
   const renderRatingsDetail = () => {
     return TUTOR_DETAIL.ratingsDetail.map((ratingDetail, index) => (
       <RatingBadge
@@ -252,8 +261,61 @@ function PageTutorDetail() {
               </div>
             </div>
           </div>
-          <div className="col-4">
 
+          <div className="col-4">
+            <div className={classes['buy-info-card']}>
+              <YouTube
+                videoId="8cifkpOHuZc"
+                opts={opts}
+                containerClassName={classes['video-container']}
+              />
+              <div className={classes['buy-info-content']}>
+                <div className={classes['rating-and-price']}>
+                  <div className="row">
+                    <div className="col-6">
+                      <div>
+                        <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
+                        <span className={classes['info-big-number']}>
+                          {TUTOR_DETAIL.review.star}
+                        </span>
+                      </div>
+                      <div>{TUTOR_DETAIL.review.totalReviews} reviews</div>
+                    </div>
+                    <div className="col-6">
+                      <div>
+                        <span>$</span>
+                        <span className={classes['info-big-number']}>
+                          {TUTOR_DETAIL.pricePerHour}
+                        </span>
+                      </div>
+                      <div>mỗi giờ</div>
+                    </div>
+                  </div>
+                </div>
+
+                <Button variant="success" size="lg" className={classes['book-info-btn']}>Đặt lịch</Button>
+                <Button variant="secondary" size="lg" className={classes['book-info-btn']} style={{ color: '#1cb0f6' }}>Nhắn tin</Button>
+
+                <div className={classes['sub-info']}>
+                  <div className={classes['sub-info-item']}>
+                    <div className={classes['icon-container']}>
+                      <i className="fas fa-book" style={{ color: '#f8463d' }}></i>
+                    </div>
+                    <div className={classes['info-text']}>
+                      <strong>12 lượt đặt trong 48 giờ qua</strong>
+                    </div>
+                  </div>
+                  <div className={classes['sub-info-item']}>
+                    <div className={classes['icon-container']}>
+                      <i className="far fa-clock" style={{ color: '#50bf16' }}></i>
+                    </div>
+                    <div className={classes['info-text']} style={{ fontWeight: 500 }}>
+                      Thường trả lời trong 3 giờ
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

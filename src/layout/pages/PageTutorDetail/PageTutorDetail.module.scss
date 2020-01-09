@@ -1,5 +1,5 @@
 .page-content-container {
-  padding-top: 100px;
+  padding-top: 130px;
   padding-bottom: 300px;
 }
 
@@ -135,5 +135,69 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+.buy-info-card {
+  position: sticky;
+  top: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+  // padding: 20px;
+
+  .video-container {
+    height: 200px;
+  }
+
+  .buy-info-content {
+    border: 2px solid #ddd;
+    border-top: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    padding: 20px;
+    
+    .rating-and-price {
+      text-align: center;
+      font-size: 18px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+
+      .info-big-number {
+        margin-left: 5px;
+        font-weight: bold;
+        font-size: 22px;
+        color: #333;
+      }
+    }
+
+    .book-info-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .sub-info {
+      .sub-info-item {
+        display: flex;
+        align-items: center;
+        color: #333;
+
+        .icon-container {
+          width: 36px;
+          height: 36px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 16px;
+          }
+        }
+
+        .info-text {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

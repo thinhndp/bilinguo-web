@@ -43,27 +43,6 @@
   }
 }
 
-.filter-card-content {
-  padding: 20px;
-
-  .filter-card-content-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 26px;
-    color: #444;
-  }
-
-  .filter-section {
-    margin-top: 20px;
-
-    .filter-section-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #666;
-    }
-  }
-}
-
 
 
 .filled-card {
@@ -81,6 +60,11 @@
   .tutor-photo {
     border-radius: 50%;
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+      width: 160px;
+      margin-bottom: 10px;
+    }
   }
 
   .tutor-name {
@@ -124,10 +108,19 @@
     text-align: center;
     margin-bottom: 10px;
 
+    @media screen and (max-width: 767px) {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
     .info-big-number {
       margin-left: 5px;
       font-weight: bold;
       font-size: 18px;
+      
+      @media screen and (max-width: 767px) {
+        font-size: 22px;
+      }
     }
   }
 

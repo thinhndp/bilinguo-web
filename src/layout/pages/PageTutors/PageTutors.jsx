@@ -6,6 +6,7 @@ import classes from './PageTutors.module.scss';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import SelectAvailability from './components/SelectAvailability/SelectAvailability';
+import FilterTutors from './components/FilterTutors/FilterTutors';
 
 const TUTORS = [
   {
@@ -260,18 +261,20 @@ const TUTORS = [
 ]
 
 function PageTutors() {
-  const [priceFilterValue, setPriceFilterValue] = useState({min: 1, max: 40})
+  // const [priceFilterValue, setPriceFilterValue] = useState({min: 1, max: 40})
   
   const renderTutorCards = () => {
     return TUTORS.map(tutor => (
       <div className={classes['filled-card']} style={{ marginBottom: 30 }}>
         <div className={classes['tutor-card-content']}>
           <div className="row">
-            <div className="col-2">
-              <img src={tutor.photoURL} alt="Tutor" className={classes['tutor-photo']} />
+            <div className="col-12 col-md-2">
+              <div style={{ textAlign: 'center' }}>
+                <img src={tutor.photoURL} alt="Tutor" className={classes['tutor-photo']} />
+              </div>
             </div>
 
-            <div className="col-7">
+            <div className="col-12 col-md-7">
               <div className={classes['tutor-name']}>
                 <a href="/tutors/123">{tutor.name}</a>
                 <img src={tutor.nation.flagPhotoURL} alt={tutor.nation.name} className={classes['tutor-country-logo']} />
@@ -312,7 +315,7 @@ function PageTutors() {
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-md-3">
               <div className={classes['book-info-container']}>
                 <div className="row">
                   <div className="col-6">
@@ -349,9 +352,9 @@ function PageTutors() {
       <MyNavbar />
       <Container className={classes['page-content-container']}>
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-md-8">
             <div className={classes['section-title']}>Gia sư tiếng Anh</div>
-            <div className={classes['outlined-card']} style={{ marginBottom: 40 }}>
+            <div className={`d-none d-md-block ${classes['outlined-card']}`} style={{ marginBottom: 40 }}>
               <div className={classes['availability-card-content']}>
                 <div className={classes['availability-photo-container']}>
                   <img src="https://cdn.verbling.com/static/svg/icons8/6034456424385c3abd2120cadd14fe28.icons8-calendar_plus.svg" alt="Availability"/>
@@ -363,48 +366,16 @@ function PageTutors() {
                 </div>
               </div>
             </div>
+
+            <div className="d-block d-md-none" style={{ marginBottom: 20 }}>
+              <FilterTutors />
+            </div>
+
             {renderTutorCards()}
           </div>
-          <div className="col-4">
-            <div className={classes['outlined-card']}>
-              <div className={classes['filter-card-content']}>
-                <div className={classes['filter-card-content-title']}>
-                  Lọc gia sư
-                </div>
-                <div className={classes['filter-section']}>
-                  <div className={classes['filter-section-title']}>
-                    Giá mỗi giờ
-                  </div>
-                  <div className={classes['filter-section-content']} style={{ padding: 15 }}>
-                    <InputRange
-                      maxValue={40}
-                      minValue={1}
-                      value={priceFilterValue}
-                      formatLabel={(value, type) => `$${value}`}
-                      onChange={value => setPriceFilterValue(value)}
-                    />
-                  </div>
-                </div>
-                
-                <div className={classes['filter-section']}>
-                  <div className={classes['filter-section-title']}>
-                    Khung giờ
-                  </div>
-                  <div className={classes['filter-section-content']}>
-                  <Dropdown alignRight>
-                    <Dropdown.Toggle variant="primary" size="lg" id="dropdown-basic" style={{ width: '100%' }}>
-                      Chọn khung giờ
-                    </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                      <SelectAvailability />
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          <div className="d-none d-md-block col-4">
+            <FilterTutors />
           </div>
         </div>
       </Container>

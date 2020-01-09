@@ -17,11 +17,17 @@
       width: 120px;
       font-weight: bold;
       color: #444;
+
+      @media screen and (max-width: 575px) {
+        width: 60px;
+      }
+
       img {
         width: 30px;
         height: 30px;
       }
     }
+
     .day-of-week-button {
       font-weight: bold;
       color: #444;

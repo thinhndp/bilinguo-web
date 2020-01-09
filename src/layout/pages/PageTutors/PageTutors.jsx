@@ -278,7 +278,7 @@ function PageTutors() {
               </div>
               <div className={classes['tutor-info']}>
                 <span className={classes['tutor-info-strong']}>
-                  <i class="fas fa-user"></i> {tutor.totalActiveStudents} học viên
+                  <i className="fas fa-user"></i> {tutor.totalActiveStudents} học viên
                 </span>
                 <span className={classes['separate-letter']}>&bull;</span>
                 <span className={classes['tutor-info-strong']}>
@@ -317,7 +317,7 @@ function PageTutors() {
                 <div className="row">
                   <div className="col-6">
                     <div>
-                      <span><i class="fas fa-star" style={{ color: '#FBF227' }}></i></span>
+                      <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
                       <span className={classes['info-big-number']}>
                         {tutor.review.star}
                       </span>
@@ -398,9 +398,6 @@ function PageTutors() {
 
                     <Dropdown.Menu>
                       <SelectAvailability />
-                      {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
                     </Dropdown.Menu>
                   </Dropdown>
                   </div>

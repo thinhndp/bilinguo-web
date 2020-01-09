@@ -50,6 +50,7 @@
           .vote-count {
             font-size: 1.6rem;
             color: #6a737c;
+            user-select: none;
           }
         }
       }
@@ -171,6 +172,10 @@
                       font-size: 20px;
                       padding: 0 6px;
                     }
+
+                    .post-icon-active {
+                      color: #1cb0f6;
+                    }
                   }
                 }
               }
@@ -253,6 +258,7 @@
                     font-size: 1rem;
                     color: #6a737c;
                     line-height: normal;
+                    user-select: none;
                   }
                 }
                 
@@ -294,7 +300,7 @@
         background-color: white;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        padding: 20px;
+        padding: 20px 30px;
         margin-bottom: 20px;
 
         .section-name {
@@ -302,10 +308,101 @@
           color: #333;
           font-size: 18px;
         }
-      }
-      .related-post-section {
 
+        .related-posts-section {
+          display: flex;
+          flex-direction: column;
+  
+          .related-post {
+            padding: 10px 0;
+  
+            .title {
+              color: #1cb0f6;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: 500;
+            }
+            .title:hover {
+              // font-weight: 700;
+              -webkit-text-stroke: 0.6px;
+              -webkit-text-stroke-color: #1cb0f6;
+            }
+  
+            .subtext {
+              margin-top: 6px;
+              color: #999;
+            }
+            
+            .profile-picture {
+              width: 20px;
+              height: 20px;  
+              border-radius: 100%;
+              margin: 0 6px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .top-users-section {
+          display: flex;
+          flex-direction: column;
+  
+          .top-user {
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .username-and-pp {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              flex: 3;
+              .username {
+                color: #1cb0f6;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 500;
+              }
+
+              .username:hover {
+                // font-weight: 700;
+                -webkit-text-stroke: 0.6px;
+                -webkit-text-stroke-color: #1cb0f6;
+              }
+    
+              .profile-picture {
+                width: 40px;
+                height: 40px;  
+                border-radius: 100%;
+                margin: 0 6px;
+                cursor: pointer;
+                margin-right: 10px;
+              }
+            }
+            .comment-count {
+              // margin-top: 6px;
+              padding-left: 10px;
+              flex: 1;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              color: #6a737c;
+              font-size: 1.2rem;
+
+              .icon {
+                margin-right: 6px;
+              }
+
+              .count {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
       }
+
     }
   }
 }
@@ -343,4 +440,12 @@
 
 .seperator-vertical {
   height: 16px;
+}
+
+.upvote-color {
+  color: #1CB0F6 !important;
+}
+
+.downvote-color {
+  color: #F6621C !important;
 }

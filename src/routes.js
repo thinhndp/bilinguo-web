@@ -32,31 +32,31 @@ import PagePost from './layout/pages/PagePost/PagePost';
 
 export const routes = [
   {
-    path: '/',
-    component: <PageHome />
-  },
-  {
     path: '/exercise',
-    component: <PageExercise />
+    component: PageExercise
   },
   {
     path: '/exercise/result',
-    component: <PageExerciseResult />
+    component: PageExerciseResult
   },
   {
     path: '/learn',
-    component: <PageExerciseMenu />
+    component: PageExerciseMenu
   },
   {
     path: '/profile/achievements',
-    component: <PageProfileAchievements />
+    component: PageProfileAchievements
   },
   {
     path: '/forum',
-    component: <PageForum />
+    component: PageForum
   },
   {
-    path: '/post/:postId',
-    component: <PagePost />
+    path: '/post/:id',
+    component: PagePost
+  },
+  {
+    path: '/',
+    component: PageHome
   },
 ];

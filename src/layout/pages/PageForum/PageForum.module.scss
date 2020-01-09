@@ -1,5 +1,5 @@
 .page-body {
-  height: 100%;
+  min-height: 100vh;
   padding-top: 100px;
   background-color: #EAEFF9;
 
@@ -128,7 +128,7 @@
         }
 
         .detail-column {
-          flex: 3;
+          flex: 5;
           display: flex;
           flex-direction: column;
           padding-right: 24px;
@@ -145,6 +145,7 @@
           font-weight: bold;
           // color: #333;
           color: #1cb0f6;
+          cursor: pointer;
         }
 
         .subtext-1 {
@@ -241,6 +242,16 @@
               width: 20px;
               height: 20px;
             }
+          }
+        }
+
+        .topic-group-active {
+          color: #1cb0f6;
+          .topic-name {
+            color: #1cb0f6;
+          }
+          .icon {
+            color: #1cb0f6;
           }
         }
       }

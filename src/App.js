@@ -1,6 +1,7 @@
 import React from 'react';
 import { StoreProvider } from 'easy-peasy';
 import { BrowserRouter } from 'react-router-dom';
+import ScrollIntoView from './utils/ScrollIntoView';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -15,7 +16,9 @@ function App() {
   return (
     <StoreProvider store={store}>
       <BrowserRouter>
-        <Layout></Layout>
+        <ScrollIntoView>
+          <Layout></Layout>
+        </ScrollIntoView>
       </BrowserRouter>
     </StoreProvider>
   );

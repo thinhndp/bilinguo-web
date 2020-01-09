@@ -144,7 +144,7 @@ function PageTutorDetail() {
       <MyNavbar />
       <Container className={classes['page-content-container']}>
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-md-8">
             <div className={classes['tutor-card']}>
               <div className={classes['card-header']}>
                 <div className={classes['avatar-container']}>
@@ -195,7 +195,7 @@ function PageTutorDetail() {
                 </div>
                 <hr></hr>
                 <div className="row">
-                  <div className="col-6">
+                  <div className="col-12 col-md-6">
                     <div className={classes['subsection-title']}>Ưu tiên độ tuổi</div>
                     <ul className={classes['dashed-ul']}>
                       <li>Tiểu học (6-12)</li>
@@ -205,7 +205,7 @@ function PageTutorDetail() {
                       <li>Người lớn (40+)</li>
                     </ul>
                   </div>
-                  <div className="col-6">
+                  <div className="col-12 col-md-6">
                     <div className={classes['subsection-title']}>Ưu tiên trình độ</div>
                     <ul className={classes['dashed-ul']}>
                       <li>Mới bắt đầu</li>
@@ -218,35 +218,89 @@ function PageTutorDetail() {
               </div>
             </div>
 
+            <div className={`d-block d-md-none ${classes['buy-info-card']}`}>
+              <YouTube
+                videoId="8cifkpOHuZc"
+                opts={opts}
+                containerClassName={classes['video-container']}
+              />
+              <div className={classes['buy-info-content']}>
+                <div className={classes['rating-and-price']}>
+                  <div className="row">
+                    <div className="col-6">
+                      <div>
+                        <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
+                        <span className={classes['info-big-number']}>
+                          {TUTOR_DETAIL.review.star}
+                        </span>
+                      </div>
+                      <div>{TUTOR_DETAIL.review.totalReviews} reviews</div>
+                    </div>
+                    <div className="col-6">
+                      <div>
+                        <span>$</span>
+                        <span className={classes['info-big-number']}>
+                          {TUTOR_DETAIL.pricePerHour}
+                        </span>
+                      </div>
+                      <div>mỗi giờ</div>
+                    </div>
+                  </div>
+                </div>
+
+                <Button variant="success" size="lg" className={classes['book-info-btn']}>Đặt lịch</Button>
+                <Button variant="secondary" size="lg" className={classes['book-info-btn']} style={{ color: '#1cb0f6' }}>Nhắn tin</Button>
+
+                <div className={classes['sub-info']}>
+                  <div className={classes['sub-info-item']}>
+                    <div className={classes['icon-container']}>
+                      <i className="fas fa-book" style={{ color: '#f8463d' }}></i>
+                    </div>
+                    <div className={classes['info-text']}>
+                      <strong>12 lượt đặt trong 48 giờ qua</strong>
+                    </div>
+                  </div>
+                  <div className={classes['sub-info-item']}>
+                    <div className={classes['icon-container']}>
+                      <i className="far fa-clock" style={{ color: '#50bf16' }}></i>
+                    </div>
+                    <div className={classes['info-text']} style={{ fontWeight: 500 }}>
+                      Thường trả lời trong 3 giờ
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className={classes['tutor-stat-card']}>
               <div className={classes['section-title']} style={{ color: '#fff' }}>Thống kê Gia sư</div>
               <div className="row">
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/2501ea881e1c51e92314e3aef43239e9.icons8-watch.svg" alt="watch" />
                   <div className={classes['stat-name']}>Thời gian phản hồi</div>
                   <div className={classes['stat-description']}>Trong vòng vài giờ</div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/b16055ccbb1aa1c6004603fc1398b1bf.icons8-timetable.svg" alt="watch" />
                   <div className={classes['stat-name']}>Tham gia vào</div>
                   <div className={classes['stat-description']}>7 tháng trước</div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/8de190b7e45456ead78ae83b0c915c71.icons8-place_marker.svg" alt="watch" />
                   <div className={classes['stat-name']}>Tỷ lệ có mặt</div>
                   <div className={classes['stat-description']}>100%</div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/4b89995c24f5b6d7aceceb7b03b6dc51.icons8-class.svg" alt="watch" />
                   <div className={classes['stat-name']}>Số bài giảng</div>
                   <div className={classes['stat-description']}>Within a few hours</div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/38d16413384dca1d9b6ac986b757b2d2.icons8-class_blackboard.svg" alt="watch" />
                   <div className={classes['stat-name']}>Số bài mỗi học viên</div>
                   <div className={classes['stat-description']}>Trung bình 11.5 bài</div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 col-md-4">
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/1b112af21214f4c6d5f040a701abe6ce.icons8-filled_star.svg" alt="watch" />
                   <div className={classes['stat-name']}>Đánh giá</div>
                   <div className={classes['stat-description']}>5.0</div>
@@ -262,7 +316,7 @@ function PageTutorDetail() {
             </div>
           </div>
 
-          <div className="col-4">
+          <div className="d-none d-md-block col-4">
             <div className={classes['buy-info-card']}>
               <YouTube
                 videoId="8cifkpOHuZc"

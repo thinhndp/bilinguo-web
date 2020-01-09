@@ -273,7 +273,7 @@ function PageTutors() {
 
             <div className="col-7">
               <div className={classes['tutor-name']}>
-                <a href="/tutor/detail">{tutor.name}</a>
+                <a href="/tutors/123">{tutor.name}</a>
                 <img src={tutor.nation.flagPhotoURL} alt={tutor.nation.name} className={classes['tutor-country-logo']} />
               </div>
               <div className={classes['tutor-info']}>

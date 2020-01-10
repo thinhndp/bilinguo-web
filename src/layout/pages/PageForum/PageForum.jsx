@@ -82,6 +82,10 @@ const PageForum = () => {
     history.push(`/post/${postId}`);
   }
 
+  const handleNewPostClick = () => {
+    history.push('/new-post');
+  }
+
   const getPostsToDisplay = () => {
     var postsToDisplay = posts;
     postsToDisplay = applyTopicFilter(topicFilter, postsToDisplay);
@@ -145,7 +149,7 @@ const PageForum = () => {
                 variant="primary"
                 size="lg"
                 className={classes["button"] + " " + classes["primary-button"]}
-                onClick={() => {}}
+                onClick={handleNewPostClick}
               >
                 Đăng bài
               </Button>}

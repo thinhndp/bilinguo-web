@@ -1,0 +1,110 @@
+.page-body {
+  min-height: 100vh;
+  padding: 100px 0 50px;
+  background-color: #EAEFF9;
+
+  .new-post-form-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+
+    .topic-dd-n-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .topic-dd-button {
+        margin: 10px 0 0 !important;
+        font-size: 16px !important;
+        color: #1cb0f6 !important;
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+        background-color: transparent;
+        padding: unset !important;
+        border: none;
+        // border-style: unset;
+      }
+
+
+    }
+  }
+}
+
+
+.button {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  // border-width: 2px;
+  border-width: 0;
+  border-radius: 10px;
+  padding: 10px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: fit-content;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+  // height: 50px;
+}
+
+.button:hover {
+  margin-top: unset !important;
+  // border-bottom-width: unset !important;
+  border: none;
+}
+.button:active {
+  margin-top: unset !important;
+  // border-bottom-width: unset !important;
+  border: none;
+}
+
+.primary-button {
+  color: white;
+  background-color: #1CB0F6;
+  // border-color: #007CBD;
+}
+
+.primary-button:hover {
+  color: white;
+  background-color: #00CDF5;
+  // border-color: #6dcc00;
+}
+
+.primary-button:active {
+  color: white !important;
+  background-color: #008CCF !important;
+  // border-color: #6dcc00;
+}
+
+.button-disabled {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  // border-width: 2px;
+  border-width: 0;
+  border-radius: 10px;
+  padding: 10px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: fit-content;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: #222;
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 94px;
+  padding: 10px;
+  margin-top: 20px;
+}

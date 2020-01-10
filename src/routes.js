@@ -29,6 +29,7 @@ import PageExerciseResult from './layout/pages/PageExerciseResult/PageExerciseRe
 import PageProfileAchievements from './layout/pages/PageProfileAchievements/PageProfileAchievements';
 import PageForum from './layout/pages/PageForum/PageForum';
 import PagePost from './layout/pages/PagePost/PagePost';
+import PageNewPost from './layout/pages/PageNewPost/PageNewPost';
 
 export const routes = [
   {
@@ -54,6 +55,10 @@ export const routes = [
   {
     path: '/post/:id',
     component: PagePost
+  },
+  {
+    path: '/new-post',
+    component: PageNewPost
   },
   {
     path: '/',

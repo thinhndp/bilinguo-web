@@ -69,8 +69,14 @@ const PageNewPost = () => {
   return (
     <div>
       <MyNavbar />
-      <div className={classes['page-body']}>
-        <div className={classes['new-post-form-container']}>
+      <div className={
+        classes['page-body']
+        + (isDesktop ? ( ' ' + classes['page-body-desktop'] ) : (' ' + classes['page-body-not-desktop']))
+      }>
+        <div className={
+          classes['new-post-form-container']
+          + (!isDesktop ? ( ' ' + classes['unset-shadow'] ) : (''))
+        }>
           <div className={classes['topic-dd-n-button']}>
             <Dropdown
               isOpen={topicDropdownOpen}
@@ -95,6 +101,21 @@ const PageNewPost = () => {
                 }
               </DropdownMenu>
             </Dropdown>
+            {
+              !isMobile &&
+              <Button
+                variant="primary"
+                size="lg"
+                disabled={!isFullyInput()}
+                className={ isFullyInput() ? (classes["button"] + " " + classes["primary-button"]) : (classes['button-disabled'])}
+                onClick={handlePostClick}
+              >
+                Đăng
+              </Button>
+            }
+          </div>
+          {
+            isMobile &&
             <Button
               variant="primary"
               size="lg"
@@ -104,7 +125,7 @@ const PageNewPost = () => {
             >
               Đăng
             </Button>
-          </div>
+          }
           <div>
             <TextareaAutosize
               className={classes['input-field']}

@@ -1,7 +1,7 @@
 .page-body {
   min-height: 100vh;
   padding-top: 100px;
-  background-color: #EAEFF9;
+  // background-color: #EAEFF9;
 
   .posts-and-topics-container {
     max-width: 1140px;
@@ -37,6 +37,8 @@
             font-weight: 500 !important;
             color: #333 !important;
             border: 1px solid #ccc;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
             // border-style: unset;
           }
   
@@ -66,7 +68,8 @@
       .post-card {
         background-color: white;
         border-radius: 12px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        // box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        border: 2px solid #ddd;
         display: flex;
         position: relative;
         padding: 20px 24px;
@@ -201,7 +204,8 @@
         margin: 16px 0;
         display: flex;
         // height: 400px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        // box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        border: 2px solid #ddd;
         border-radius: 16px;
         padding: 26px;
         flex-direction: column;
@@ -300,7 +304,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: fit-content;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
   // height: 50px;
 }
@@ -335,7 +339,7 @@
 }
 
 .round {
-  border-radius: 100%;
+  border-radius: 100% !important;
   width: 60px;
   height: 60px;
   z-index: 10;
@@ -359,6 +363,7 @@
   background-color: white;
   border-radius: 12px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  // border: 2px solid #ddd;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -466,6 +471,15 @@
   padding: unset !important;
   border: none;
   // border-style: unset;
+}
+
+.dd-menu {
+  // font-size: 16px;
+  font-weight: 500;
+}
+
+.dd-text {
+  color: #1cb0f6 !important;
 }
 
 // .topic-dd-button:hover {

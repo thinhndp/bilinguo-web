@@ -112,6 +112,13 @@
   border-radius: 15px;
   padding: 20px;
 
+  .stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .stat-icon {
     width: 50px;
     height: 50px;
@@ -120,12 +127,14 @@
   .stat-name {
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
   }
   
   .stat-description {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -209,4 +218,11 @@
       }
     }
   }
+}
+
+.tutor-calendar-card {
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
 }

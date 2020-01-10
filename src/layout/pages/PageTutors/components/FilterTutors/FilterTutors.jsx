@@ -52,7 +52,7 @@ function FilterTutors() {
           <div className="col-12 col-sm-6 col-lg-12 col-xl-6">
             <div className={classes['filter-section']}>
               <div className={classes['filter-section-title']}>
-                Ưu tiên cấp độ
+                Chương trình
               </div>
               <div className={classes['filter-section-content']}>
                 <div className={classes['switch-checkbox-container']}>

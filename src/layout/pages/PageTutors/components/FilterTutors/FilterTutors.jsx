@@ -5,6 +5,7 @@ import InputRange from 'react-input-range';
 import SelectAvailability from '../SelectAvailability/SelectAvailability';
 
 import classes from './FilterTutors.module.scss';
+import CoolCheckbox from '../../../../../components/CoolCheckbox/CoolCheckbox';
 
 function FilterTutors() {
   const [priceFilterValue, setPriceFilterValue] = useState({min: 1, max: 40})
@@ -13,7 +14,7 @@ function FilterTutors() {
     <div className={classes['outlined-card']}>
       <div className={classes['filter-card-content']}>
         <div className={classes['filter-card-content-title']}>
-          Lọc gia sư
+          Lọc Gia sư
         </div>
         <div className={classes['filter-section']}>
           <div className={classes['filter-section-title']}>
@@ -44,6 +45,54 @@ function FilterTutors() {
               <SelectAvailability />
             </Dropdown.Menu>
           </Dropdown>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-sm-6 col-lg-12 col-xl-6">
+            <div className={classes['filter-section']}>
+              <div className={classes['filter-section-title']}>
+                Chương trình
+              </div>
+              <div className={classes['filter-section-content']}>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Mới bắt đầu</span>
+                </div>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Trung cấp</span>
+                </div>
+              </div>
+              <div className={classes['filter-section-content']}>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Khá giỏi</span>
+                </div>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Nâng cao</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-12 col-sm-6 col-lg-12 col-xl-6">
+            <div className={classes['filter-section']}>
+              <div className={classes['filter-section-title']}>
+                Giới tính
+              </div>
+              <div className={classes['filter-section-content']}>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Nam</span>
+                </div>
+                <div className={classes['switch-checkbox-container']}>
+                  <CoolCheckbox />
+                  <span>Nữ</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

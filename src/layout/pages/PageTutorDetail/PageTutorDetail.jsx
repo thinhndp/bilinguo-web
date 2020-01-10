@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Badge, Button, Container, Dropdown } from 'react-bootstrap';
+import { Badge, Button, Container, Dropdown, Form, Modal } from 'react-bootstrap';
 import YouTube from 'react-youtube';
 
 import classes from './PageTutorDetail.module.scss';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import RatingBadge from './components/RatingBadge/RatingBadge';
+import TutorCalendar from '../../../components/TutorCalendar/TutorCalendar';
 
 const TUTOR_DETAIL = {
   name: 'David Alexander P.',
@@ -35,6 +36,24 @@ const TUTOR_DETAIL = {
     totalReviews: 14,
   },
   pricePerHour: 24,
+  availableTimeList: [
+    {
+      timeOfDayValue: 'early-morning',
+      availableDayValues: ['sun', 'sat'],
+    },
+    {
+      timeOfDayValue: 'morning',
+      availableDayValues: ['sun', 'sat'],
+    },
+    {
+      timeOfDayValue: 'afternoon',
+      availableDayValues: ['sun', 'wed', 'thu', 'fri', 'sat'],
+    },
+    {
+      timeOfDayValue: 'evening',
+      availableDayValues: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
+    },
+  ],
   ratingsDetail: [
     {
       name: 'Vui tính',
@@ -118,6 +137,8 @@ const TUTOR_DETAIL = {
 }
 
 function PageTutorDetail() {
+  const [isModalShowBooking, setIsModalShowBooking] = useState(false);
+  const [isModalShowSendMessage, setIsModalShowSendMessage] = useState(false);
   
   const opts = {
     height: '100%',
@@ -137,6 +158,75 @@ function PageTutorDetail() {
         name={ratingDetail.name}
       />
     ));
+  }
+
+  const renderBuyInfoCard = () => {
+    return (
+      <div className={`${classes['buy-info-card']}`}>
+        <YouTube
+          videoId="8cifkpOHuZc"
+          opts={opts}
+          containerClassName={classes['video-container']}
+        />
+        <div className={classes['buy-info-content']}>
+          <div className={classes['rating-and-price']}>
+            <div className="row">
+              <div className="col-6">
+                <div>
+                  <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
+                  <span className={classes['info-big-number']}>
+                    {TUTOR_DETAIL.review.star}
+                  </span>
+                </div>
+                <div>{TUTOR_DETAIL.review.totalReviews} đánh giá</div>
+              </div>
+              <div className="col-6">
+                <div>
+                  <span>$</span>
+                  <span className={classes['info-big-number']}>
+                    {TUTOR_DETAIL.pricePerHour}
+                  </span>
+                </div>
+                <div>mỗi giờ</div>
+              </div>
+            </div>
+          </div>
+
+          <Button
+            variant="success"
+            size="lg"
+            className={classes['book-info-btn']}
+            onClick={() => {setIsModalShowBooking(true)}}
+          >Đặt lịch</Button>
+          <Button
+            variant="secondary"
+            size="lg"
+            className={classes['book-info-btn']}
+            style={{ color: '#1cb0f6' }}
+            onClick={() => {setIsModalShowSendMessage(true)}}
+          >Nhắn tin</Button>
+
+          <div className={classes['sub-info']}>
+            <div className={classes['sub-info-item']}>
+              <div className={classes['icon-container']}>
+                <i className="fas fa-book" style={{ color: '#f8463d' }}></i>
+              </div>
+              <div className={classes['info-text']}>
+                <strong>12 lượt đặt trong 48 giờ qua</strong>
+              </div>
+            </div>
+            <div className={classes['sub-info-item']}>
+              <div className={classes['icon-container']}>
+                <i className="far fa-clock" style={{ color: '#50bf16' }}></i>
+              </div>
+              <div className={classes['info-text']} style={{ fontWeight: 500 }}>
+                Thường trả lời trong 3 giờ
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
   
   return (
@@ -180,7 +270,7 @@ function PageTutorDetail() {
                 </div>
               </div>
               <div className={classes['card-content']}>
-                <div className={classes['section-title']}>About the tutor</div>
+                <div className={classes['section-title']}>Giới thiệu</div>
                 <div className={classes['tutor-description']}>
                   Finally get that "American Sound" that has eluded you for so long. Over half a century of native Californian speaking experience!
                   <br></br>
@@ -218,89 +308,44 @@ function PageTutorDetail() {
               </div>
             </div>
 
-            <div className={`d-block d-md-none ${classes['buy-info-card']}`}>
-              <YouTube
-                videoId="8cifkpOHuZc"
-                opts={opts}
-                containerClassName={classes['video-container']}
-              />
-              <div className={classes['buy-info-content']}>
-                <div className={classes['rating-and-price']}>
-                  <div className="row">
-                    <div className="col-6">
-                      <div>
-                        <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
-                        <span className={classes['info-big-number']}>
-                          {TUTOR_DETAIL.review.star}
-                        </span>
-                      </div>
-                      <div>{TUTOR_DETAIL.review.totalReviews} reviews</div>
-                    </div>
-                    <div className="col-6">
-                      <div>
-                        <span>$</span>
-                        <span className={classes['info-big-number']}>
-                          {TUTOR_DETAIL.pricePerHour}
-                        </span>
-                      </div>
-                      <div>mỗi giờ</div>
-                    </div>
-                  </div>
-                </div>
+            <div className={`d-block d-md-none`}>
+              {renderBuyInfoCard()}
+            </div>
 
-                <Button variant="success" size="lg" className={classes['book-info-btn']}>Đặt lịch</Button>
-                <Button variant="secondary" size="lg" className={classes['book-info-btn']} style={{ color: '#1cb0f6' }}>Nhắn tin</Button>
-
-                <div className={classes['sub-info']}>
-                  <div className={classes['sub-info-item']}>
-                    <div className={classes['icon-container']}>
-                      <i className="fas fa-book" style={{ color: '#f8463d' }}></i>
-                    </div>
-                    <div className={classes['info-text']}>
-                      <strong>12 lượt đặt trong 48 giờ qua</strong>
-                    </div>
-                  </div>
-                  <div className={classes['sub-info-item']}>
-                    <div className={classes['icon-container']}>
-                      <i className="far fa-clock" style={{ color: '#50bf16' }}></i>
-                    </div>
-                    <div className={classes['info-text']} style={{ fontWeight: 500 }}>
-                      Thường trả lời trong 3 giờ
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className={classes['tutor-calendar-card']}>
+              <div className={classes['section-title']}>Thời gian rảnh</div>
+              <TutorCalendar availableTimeList={TUTOR_DETAIL.availableTimeList} />
             </div>
 
             <div className={classes['tutor-stat-card']}>
               <div className={classes['section-title']} style={{ color: '#fff' }}>Thống kê Gia sư</div>
               <div className="row">
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/2501ea881e1c51e92314e3aef43239e9.icons8-watch.svg" alt="watch" />
                   <div className={classes['stat-name']}>Thời gian phản hồi</div>
                   <div className={classes['stat-description']}>Trong vòng vài giờ</div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/b16055ccbb1aa1c6004603fc1398b1bf.icons8-timetable.svg" alt="watch" />
                   <div className={classes['stat-name']}>Tham gia vào</div>
                   <div className={classes['stat-description']}>7 tháng trước</div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/8de190b7e45456ead78ae83b0c915c71.icons8-place_marker.svg" alt="watch" />
                   <div className={classes['stat-name']}>Tỷ lệ có mặt</div>
                   <div className={classes['stat-description']}>100%</div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/4b89995c24f5b6d7aceceb7b03b6dc51.icons8-class.svg" alt="watch" />
                   <div className={classes['stat-name']}>Số bài giảng</div>
-                  <div className={classes['stat-description']}>Within a few hours</div>
+                  <div className={classes['stat-description']}>181 bài giảng</div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/38d16413384dca1d9b6ac986b757b2d2.icons8-class_blackboard.svg" alt="watch" />
                   <div className={classes['stat-name']}>Số bài mỗi học viên</div>
                   <div className={classes['stat-description']}>Trung bình 11.5 bài</div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className={`col-6 col-md-4 ${classes['stat']}`}>
                   <img className={classes['stat-icon']} src="https://cdn.verbling.com/static/svg/icons8/1b112af21214f4c6d5f040a701abe6ce.icons8-filled_star.svg" alt="watch" />
                   <div className={classes['stat-name']}>Đánh giá</div>
                   <div className={classes['stat-description']}>5.0</div>
@@ -317,62 +362,62 @@ function PageTutorDetail() {
           </div>
 
           <div className="d-none d-md-block col-4">
-            <div className={classes['buy-info-card']}>
-              <YouTube
-                videoId="8cifkpOHuZc"
-                opts={opts}
-                containerClassName={classes['video-container']}
-              />
-              <div className={classes['buy-info-content']}>
-                <div className={classes['rating-and-price']}>
-                  <div className="row">
-                    <div className="col-6">
-                      <div>
-                        <span><i className="fas fa-star" style={{ color: '#FBF227' }}></i></span>
-                        <span className={classes['info-big-number']}>
-                          {TUTOR_DETAIL.review.star}
-                        </span>
-                      </div>
-                      <div>{TUTOR_DETAIL.review.totalReviews} reviews</div>
-                    </div>
-                    <div className="col-6">
-                      <div>
-                        <span>$</span>
-                        <span className={classes['info-big-number']}>
-                          {TUTOR_DETAIL.pricePerHour}
-                        </span>
-                      </div>
-                      <div>mỗi giờ</div>
-                    </div>
-                  </div>
-                </div>
-
-                <Button variant="success" size="lg" className={classes['book-info-btn']}>Đặt lịch</Button>
-                <Button variant="secondary" size="lg" className={classes['book-info-btn']} style={{ color: '#1cb0f6' }}>Nhắn tin</Button>
-
-                <div className={classes['sub-info']}>
-                  <div className={classes['sub-info-item']}>
-                    <div className={classes['icon-container']}>
-                      <i className="fas fa-book" style={{ color: '#f8463d' }}></i>
-                    </div>
-                    <div className={classes['info-text']}>
-                      <strong>12 lượt đặt trong 48 giờ qua</strong>
-                    </div>
-                  </div>
-                  <div className={classes['sub-info-item']}>
-                    <div className={classes['icon-container']}>
-                      <i className="far fa-clock" style={{ color: '#50bf16' }}></i>
-                    </div>
-                    <div className={classes['info-text']} style={{ fontWeight: 500 }}>
-                      Thường trả lời trong 3 giờ
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {renderBuyInfoCard()}
           </div>
         </div>
       </Container>
+
+      {/* Book Tutor Modal */}
+      <Modal show={isModalShowBooking} centered onHide={() => {setIsModalShowBooking(false)}}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ fontWeight: 'bold' }}>Đặt lịch</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <TutorCalendar availableTimeList={TUTOR_DETAIL.availableTimeList} />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {setIsModalShowBooking(false)}}>
+            Đóng
+          </Button>
+          {/* <Button variant="success" onClick={() => {setIsModalShowBooking(false)}}>
+            Xác nhận
+          </Button> */}
+        </Modal.Footer>
+      </Modal>
+
+      {/* Send Message Modal */}
+      <Modal show={isModalShowSendMessage} centered onHide={() => {setIsModalShowSendMessage(false)}}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ fontWeight: 'bold' }}>Liên hệ cho David Alexander P.</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label style={{ fontSize: 16, fontWeight: 500 }}>Email của bạn*</Form.Label>
+              <Form.Control size="lg" type="email" placeholder="Nhập email" />
+              <Form.Text style={{ fontSize: 14 }} className="text-muted">
+                Email của bạn sẽ được bảo mật tuyệt đối.
+              </Form.Text>
+            </Form.Group>
+            
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label style={{ fontSize: 16, fontWeight: 500 }}>Nội dung*</Form.Label>
+              <Form.Control size="lg" as="textarea" rows="3" placeholder="Nhập nội dung cần trao đổi..." />
+              {/* <Form.Text style={{ fontSize: 14 }} className="text-muted">
+                Email của bạn sẽ được bảo mật tuyệt đối.
+              </Form.Text> */}
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {setIsModalShowSendMessage(false)}}>
+            Đóng
+          </Button>
+          <Button variant="success" onClick={() => {setIsModalShowSendMessage(false)}}>
+            Gửi tin
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }

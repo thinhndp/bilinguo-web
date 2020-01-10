@@ -1,0 +1,60 @@
+.calendar {
+  width: 100%;
+  height: 100%;
+}
+
+.calendar-row {
+  display: flex;
+  // height: 50px;
+
+  .timeofday-column {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .timeofday-photo-container {
+      width: 48px;
+      height: 48px;
+    }
+
+    .timeofday-name {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .timeofday-time {
+      font-weight: 500;
+      color: #444;
+    }
+  }
+
+  .dayofweek-column {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    &.busy-cell {
+      border: 1px solid #fff;
+      background: #ddd;
+    }
+    
+    &.available-cell {
+      border: 1px solid #fff;
+      background: #61FF5C ;
+      cursor: pointer;
+    }
+  }
+}
+
+.dialog-confirm {
+
+  :global(.modal-content) {
+    background: #1cb0f6;
+    color: #fff;
+    border-radius: 15px;
+  }
+}

@@ -6,6 +6,7 @@ import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import classes from './PageExerciseMenu.module.scss';
 
 import { exerciseGroupLvl0, exerciseGroupLvl1, achivements } from '../../../mock-data';
+import CommonSideCards from '../../components/CommonSideCards/CommonSideCards';
 
 function PageExerciseMenu(props) {
   return (
@@ -30,8 +31,8 @@ function PageExerciseMenu(props) {
         </div>
         <div className={classes["may-cai-ben-phai-container"]}>
 
-          {/* Streak */}
-          <div className={classes["frame"]}>
+          <CommonSideCards isFloatingCard={true} />
+          {/* <div className={classes["frame"]}>
             <h2 className={classes["frame-title"]}>
               <span className={classes["title"]}>Mục tiêu mỗi ngày</span>
               <a href="/learn" className={classes["more"]}>Lên Lịch</a>
@@ -53,7 +54,6 @@ function PageExerciseMenu(props) {
             </div>
           </div>
 
-          {/* Achievements */}
           <div className={classes["frame"]}>
             <h2 className={classes["frame-title"]}>
               <span className={classes["title"]}>Thành tích</span>
@@ -90,7 +90,7 @@ function PageExerciseMenu(props) {
                 </div>
               )) }
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

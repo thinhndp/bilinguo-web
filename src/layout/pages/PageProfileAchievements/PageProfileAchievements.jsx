@@ -5,6 +5,8 @@ import classes from './PageProfileAchievements.module.scss';
 
 import AchievementList from './components/AchievementList/AchievementList';
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
+import CommonSideCards from '../../components/CommonSideCards/CommonSideCards';
+import AchievementSideCards from './components/AchievementSideCards/AchievementSideCards';
 
 function PageProfileAchievements() {
   // const [toggler, setToggler] = useState(false);
@@ -13,7 +15,7 @@ function PageProfileAchievements() {
       <MyNavbar />
       <Container className={classes['page-content-container']}>
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-lg-8">
             <div className={classes['anhdaidien-va-ten']}>
               <div className={classes['avatar-container']}>
                 <img
@@ -34,13 +36,18 @@ function PageProfileAchievements() {
               </div>
             </div>
 
+            <div className="d-block d-lg-none" style={{ marginTop: 20 }}>
+              <AchievementSideCards />
+            </div>
+
             <div className={classes['achievements-container']}>
               <div className={classes['section-title']}>Thành tích</div>
               <AchievementList />
             </div>
           </div>
-          <div className="col-4">
-            <div className={classes['card-section']}>
+          <div className="d-none d-lg-block col-4">
+            <AchievementSideCards />
+            {/* <div className={classes['card-section']} style={{ marginBottom: 20 }}>
               <div className={classes['card-section-title']}>
                 Ngôn ngữ
               </div>
@@ -60,6 +67,8 @@ function PageProfileAchievements() {
                 </div>
               </div>
             </div>
+
+            <CommonSideCards isHideAchievementCard={true} /> */}
           </div>
         </div>
       </Container>

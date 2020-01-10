@@ -4,7 +4,6 @@ import { Container, Button } from 'react-bootstrap';
 import classes from './MyNavbar.module.scss';
 
 function MyNavbar() {
-  console.log(classes['search-icon'])
   return (
     <div className={classes['navbar']}>
       <Container className={classes['navbar-inner-container']}>

@@ -11,6 +11,10 @@ import './styles/bootstrap.min.css';
 // InputRange css
 // import 'react-input-range/lib/css/index.css'
 
+// Slick css
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import { store } from './store';
 import Layout from './layout/Layout';
 // import Showcase from './components/Showcase/Showcase';

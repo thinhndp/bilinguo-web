@@ -352,9 +352,9 @@ function PageTutors() {
       <MyNavbar />
       <Container className={classes['page-content-container']}>
         <div className="row">
-          <div className="col-12 col-md-8">
+          <div className="col-12 col-lg-8">
             <div className={classes['section-title']}>Gia sư tiếng Anh</div>
-            <div className={`d-none d-md-block ${classes['outlined-card']}`} style={{ marginBottom: 40 }}>
+            <div className={`d-none d-lg-block ${classes['outlined-card']}`} style={{ marginBottom: 40 }}>
               <div className={classes['availability-card-content']}>
                 <div className={classes['availability-photo-container']}>
                   <img src="https://cdn.verbling.com/static/svg/icons8/6034456424385c3abd2120cadd14fe28.icons8-calendar_plus.svg" alt="Availability"/>
@@ -367,14 +367,14 @@ function PageTutors() {
               </div>
             </div>
 
-            <div className="d-block d-md-none" style={{ marginBottom: 20 }}>
+            <div className="d-block d-lg-none" style={{ marginBottom: 20 }}>
               <FilterTutors />
             </div>
 
             {renderTutorCards()}
           </div>
 
-          <div className="d-none d-md-block col-4">
+          <div className="d-none d-lg-block col-4">
             <FilterTutors />
           </div>
         </div>

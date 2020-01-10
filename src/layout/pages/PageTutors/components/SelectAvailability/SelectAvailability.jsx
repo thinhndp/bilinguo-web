@@ -16,7 +16,7 @@ function SelectAvailability() {
             src="https://cdn.verbling.com/static/svg/icons8/48282dbccf7cd484dbeb475e9da33181.icons8-partly_cloudy_day.svg"
             alt="Early Morning"
           />
-          <div>Early Morning</div>
+          <div>Sáng</div>
         </div>
       ),
     },
@@ -28,7 +28,7 @@ function SelectAvailability() {
             src="https://cdn.verbling.com/static/svg/icons8/470c5669aa5ba82f6963c4ae5be21381.icons8-sunrise.svg"
             alt="Morning"
           />
-          <div>Morning</div>
+          <div>Trưa</div>
         </div>
       ),
     },
@@ -40,7 +40,7 @@ function SelectAvailability() {
             src="https://cdn.verbling.com/static/svg/icons8/26750580be019886e410a7c7cc727d9f.icons8-sun.svg"
             alt="Afternoon"
           />
-          <div>Afternoon</div>
+          <div>Chiều</div>
         </div>
       ),
     },
@@ -52,7 +52,7 @@ function SelectAvailability() {
             src="https://cdn.verbling.com/static/svg/icons8/aa53bcb429c5771cc8e11186fc853d37.icons8-new_moon.svg"
             alt="Evening"
           />
-          <div>Evening</div>
+          <div>Tối</div>
         </div>
       ),
     },
@@ -121,13 +121,13 @@ function SelectAvailability() {
     <div className={classes['select-container']}>
       <div className={classes['select-section']}>
         <div className={classes['select-section-title']}>
-          Time of the Day
+          Thời gian trong Ngày
         </div>
         <div className={classes['select-section-content']}>
           <SelectButtonsGroup options={timeOfDayOptions} onChange={(values) => {console.log(values)}} />
         </div>
         <div className={classes['select-section-title']} style={{ marginTop: 20 }}>
-          Day of the Week
+          Ngày trong Tuần
         </div>
         <div className={classes['select-section-content']}>
           <SelectButtonsGroup options={dayOfWeekOptions} onChange={(values) => {console.log(values)}} />

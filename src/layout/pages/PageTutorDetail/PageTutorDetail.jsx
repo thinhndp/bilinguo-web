@@ -180,7 +180,7 @@ function PageTutorDetail() {
                 </div>
               </div>
               <div className={classes['card-content']}>
-                <div className={classes['section-title']}>About the tutor</div>
+                <div className={classes['section-title']}>Giới thiệu</div>
                 <div className={classes['tutor-description']}>
                   Finally get that "American Sound" that has eluded you for so long. Over half a century of native Californian speaking experience!
                   <br></br>

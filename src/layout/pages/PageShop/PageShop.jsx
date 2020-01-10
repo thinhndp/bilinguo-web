@@ -107,18 +107,18 @@ function PageShop() {
           {gropuItem.itemList.map(item => (
             <div className={classes['item-section']}>
               <div className="row">
-                <div className="col-2">
+                <div className="col-4 col-md-2">
                   <div className={classes['item-section-image-container']}>
                     <img src={item.imgURL} alt={item.title} />
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-8 col-md-6">
                   <div className={classes['item-section-detail']}>
                     <div className={classes['title']}>{item.title}</div>
                     <div className={classes['description']}>{item.description}</div>
                   </div>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                   <Button variant="secondary" size="lg" className={classes['item-section-btn-buy']}>
                     Mua với giá:
                     <div style={{ color: '#ff4b4b', marginLeft: 10, display: 'flex', alignItems: 'center' }}>
@@ -154,7 +154,7 @@ function PageShop() {
       <MyNavbar />
       <Container className={classes['page-content-container']}>
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-lg-8">
             {/* Left (Main) Content */}
             <div className={classes['filled-card']}>
               <div className={classes['Clouds']}>
@@ -162,7 +162,7 @@ function PageShop() {
               </div>
 
               <div className="row">
-                <div className="col-10">
+                <div className="col-12 col-md-10">
                   <div className={classes['card-content-trial']}>
                     <div className={classes['card-content-trial-header']}>
                       <div className="mr-2">Bilinguo</div>
@@ -174,7 +174,7 @@ function PageShop() {
                 </div>
               </div>
 
-              <img className={classes['card-logo']} src="https://d35aaqx5ub95lt.cloudfront.net/images/duo-plus-shop.svg" />
+              <img className={`d-none d-md-block ${classes['card-logo']}`} src="https://d35aaqx5ub95lt.cloudfront.net/images/duo-plus-shop.svg" />
             </div>
 
             {renderGroupItems()}
@@ -192,7 +192,7 @@ function PageShop() {
             </div>
           </div>
 
-          <div className="col-4">
+          <div className="d-none d-lg-block col-4">
             {/* Right Content */}
             <div className={classes['outlined-card']}>
               <div className={classes['card-center']}>

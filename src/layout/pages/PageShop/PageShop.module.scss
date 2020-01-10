@@ -1,0 +1,208 @@
+.page-content-container {
+  padding-top: 100px;
+  padding-bottom: 300px;
+}
+
+.filled-card {
+  position: relative;
+  background: #1cb0f6;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.card-content-trial {
+  position: relative;
+  z-index: 1000;
+  min-height: 250px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .card-content-trial-header {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-content-trial-description {
+    font-size: 16px;
+  }
+}
+
+.card-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 80%;
+  z-index: 10;
+}
+
+
+.group-item-section {
+  .group-item-section-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+
+  .group-item-section-content {
+    .item-section {
+      border-top: 2px solid #ddd;
+      padding: 20px 0px;
+
+      .item-section-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item-section-detail {
+        // display: flex;
+        // flex-direction: column;
+        // height: 100%;
+        // justify-content: space-between;
+
+        .title {
+          font-weight: bold;
+          font-size: 24px;
+          color: #555;
+        }
+
+        .description {
+          margin-top: 5px;
+          font-weight: 500;
+          font-size: 18px;
+          color: #888;
+        }
+      }
+      
+      .item-section-btn-buy {
+        color: #1cb0f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.panel-lingot-info {
+  // border-top: 2px solid #ddd;
+  margin-top: 60px;
+
+  .panel-lingot-info-title {
+    font-size: 20px;
+    color: #444;
+    font-weight: bold;
+  }
+
+  .panel-lingot-info-description {
+    font-size: 18px;
+    color: #888;
+    margin: 20px 0px;
+  }
+
+  .panel-lingot-info-detail {
+    .detail-title {
+      font-weight: bold;
+    }
+
+    .detail-description {
+      font-weight: 500;
+    }
+  }
+}
+
+
+
+.Clouds {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+  height: 100%;
+  overflow: hidden;
+  animation: FadeIn 3s ease-out;
+  user-select: none;
+}
+
+@keyframes FadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.Cloud { 
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  opacity: 0;
+  //outline: solid 1px #F00;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-name: Float, FadeFloat;
+  z-index: 1;
+}
+
+.Cloud.Foreground { 
+  height: 20px;
+  min-height: 20px;
+  z-index: 3;
+}
+.Cloud.Background { 
+  height: calc(20px / 1.5); 
+  min-height: 8px;
+  animation-duration: 20s * 1.75;
+  //animation-delay: -2s;
+}
+
+@keyframes Float {
+  from { transform: translateX(100%) translateZ(0); }
+  to { transform: translateX(-15%) translateZ(0); }
+}
+
+@keyframes FadeFloat {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: 0.3; }
+}
+
+
+.Cloud { 
+  background-image: url('https://images.vexels.com/media/users/3/154714/isolated/preview/3717a3b3e817ac0b6d489c872211926c-puffy-cloud-illustration-by-vexels.png');
+}
+
+.Cloud.Background {
+  background-image: url('https://images.vexels.com/media/users/3/154714/isolated/preview/3717a3b3e817ac0b6d489c872211926c-puffy-cloud-illustration-by-vexels.png');
+}
+
+
+// Right
+.outlined-card {
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 30px;
+
+  .card-center {
+    text-align: center;
+
+    .main-text {
+      font-weight: bold;
+      font-size: 22px;
+      color: #444;
+    }
+
+    .sub-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #444;
+    }
+  }
+}

@@ -1,27 +1,5 @@
 import React from 'react';
 
-// import Showcase from './components/Showcase/Showcase';
-// import Learn from './components/Learn/Learn';
-// import Exercise from './components/Exercise/Exercise';
-// import ExerciseResult from './components/Exercise/ExerciseResult/ExerciseResult';
-
-// export const routes = [
-//   {
-//     path: '/exercise/result',
-//     component: <ExerciseResult />
-//   },
-//   {
-//     path: '/exercise',
-//     component: <Exercise />
-//   },
-//   {
-//     path: '/learn',
-//     component: <Learn />
-//   },
-//   {
-//     path: '/',
-//     component: <Showcase />
-//   }
 import PageHome from './layout/pages/PageHome/PageHome';
 import PageExercise from './layout/pages/PageExercise/PageExercise';
 import PageExerciseMenu from './layout/pages/PageExerciseMenu/PageExerciseMenu';
@@ -30,6 +8,9 @@ import PageProfileAchievements from './layout/pages/PageProfileAchievements/Page
 import PageForum from './layout/pages/PageForum/PageForum';
 import PagePost from './layout/pages/PagePost/PagePost';
 import PageNewPost from './layout/pages/PageNewPost/PageNewPost';
+import PageShop from './layout/pages/PageShop/PageShop';
+import PageTutors from './layout/pages/PageTutors/PageTutors';
+import PageTutorDetail from './layout/pages/PageTutorDetail/PageTutorDetail';
 
 export const routes = [
   {
@@ -63,5 +44,17 @@ export const routes = [
   {
     path: '/',
     component: PageHome
+  },
+  {
+    path: '/shop',
+    component: PageShop
+  },
+  {
+    path: '/tutors',
+    component: PageTutors
+  },
+  {
+    path: '/tutors/123',
+    component: PageTutorDetail
   },
 ];

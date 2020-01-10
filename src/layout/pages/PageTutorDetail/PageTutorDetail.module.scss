@@ -1,0 +1,212 @@
+.page-content-container {
+  padding-top: 130px;
+  padding-bottom: 300px;
+}
+
+
+.tutor-card {
+  // border-radius: 15px;
+  // overflow: hidden;;
+}
+
+.card-header {
+  min-height: 160px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: #1cb0f6;
+  color: #fff;
+  overflow: hidden;
+
+  display: flex;
+
+  .avatar-container {
+    width: 160px;
+    // margin-right: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 575px) {
+      display: none;
+    }
+  }
+
+  .info-container {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .name-and-subtitle-container {
+      .name {
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .subtitle {
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .detail-container {
+      .detail-item {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          font-size: 14px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+.card-content {
+  border: 2px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+
+  .tutor-description {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+  }
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.subsection-title {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dashed-ul {
+  list-style-type: none;
+  padding-left: 20px;
+
+  li {
+    &::before {
+      content: '- '
+    }
+  }
+}
+
+.tutor-stat-card {
+  margin-top: 20px;
+  background: #1cb0f6;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .stat-description {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+}
+
+.tutor-ratings-card {
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+
+  .rating-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.buy-info-card {
+  position: sticky;
+  top: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+  
+  @media screen and (max-width: 767px) {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .video-container {
+    height: 200px;
+  }
+
+  .buy-info-content {
+    border: 2px solid #ddd;
+    border-top: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    padding: 20px;
+    
+    .rating-and-price {
+      text-align: center;
+      font-size: 18px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+
+      .info-big-number {
+        margin-left: 5px;
+        font-weight: bold;
+        font-size: 22px;
+        color: #333;
+      }
+    }
+
+    .book-info-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .sub-info {
+      .sub-info-item {
+        display: flex;
+        align-items: center;
+        color: #333;
+
+        .icon-container {
+          width: 36px;
+          height: 36px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 16px;
+          }
+        }
+
+        .info-text {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

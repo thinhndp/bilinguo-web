@@ -1,0 +1,137 @@
+.page-content-container {
+  padding-top: 100px;
+  padding-bottom: 300px;
+}
+
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.outlined-card {
+  position: relative;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+}
+
+.availability-card-content {
+  padding: 20px;
+  display: flex;
+
+  .availability-photo-container {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .availability-content-container {
+    .availability-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #444;
+    }
+    
+    .availability-description {
+      font-size: 17px;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+.filled-card {
+  position: relative;
+  background: #1cb0f6;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.tutor-card-content {
+  padding: 20px;
+  color: #fff;
+  min-height: 210px;
+
+  .tutor-photo {
+    border-radius: 50%;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      width: 160px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .tutor-name {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .tutor-country-logo {
+      width: 24px;
+      border-radius: 2px;
+    }
+  }
+
+  .tutor-info {
+    // display: flex;
+    // align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    .tutor-info-strong {
+      font-weight: bold;
+    }
+  }
+
+  .tutor-description {
+    // display: flex;
+
+    .tutor-description-brief {
+      font-weight: bold;
+    }
+  }
+
+  .book-info-container {
+    text-align: center;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .info-big-number {
+      margin-left: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      
+      @media screen and (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .book-info-btn {
+    width: 100%;
+    // margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.separate-letter {
+  margin-left: 5px;
+  margin-right: 5px;
+}

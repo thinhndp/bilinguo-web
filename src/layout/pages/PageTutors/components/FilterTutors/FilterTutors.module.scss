@@ -1,0 +1,26 @@
+.outlined-card {
+  position: relative;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+}
+
+.filter-card-content {
+  padding: 20px;
+
+  .filter-card-content-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    color: #444;
+  }
+
+  .filter-section {
+    margin-top: 20px;
+
+    .filter-section-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #666;
+    }
+  }
+}

@@ -7,49 +7,54 @@ import PageExerciseResult from './layout/pages/PageExerciseResult/PageExerciseRe
 import PageProfileAchievements from './layout/pages/PageProfileAchievements/PageProfileAchievements';
 import PageForum from './layout/pages/PageForum/PageForum';
 import PagePost from './layout/pages/PagePost/PagePost';
+import PageNewPost from './layout/pages/PageNewPost/PageNewPost';
 import PageShop from './layout/pages/PageShop/PageShop';
 import PageTutors from './layout/pages/PageTutors/PageTutors';
 import PageTutorDetail from './layout/pages/PageTutorDetail/PageTutorDetail';
 
 export const routes = [
   {
-    path: '/',
-    component: <PageHome />
-  },
-  {
     path: '/exercise',
-    component: <PageExercise />
+    component: PageExercise
   },
   {
     path: '/exercise/result',
-    component: <PageExerciseResult />
+    component: PageExerciseResult
   },
   {
     path: '/learn',
-    component: <PageExerciseMenu />
+    component: PageExerciseMenu
   },
   {
     path: '/profile/achievements',
-    component: <PageProfileAchievements />
+    component: PageProfileAchievements
   },
   {
     path: '/forum',
-    component: <PageForum />
+    component: PageForum
   },
   {
-    path: '/post/:postId',
-    component: <PagePost />
+    path: '/post/:id',
+    component: PagePost
+  },
+  {
+    path: '/new-post',
+    component: PageNewPost
+  },
+  {
+    path: '/',
+    component: PageHome
   },
   {
     path: '/shop',
-    component: <PageShop />
+    component: PageShop
   },
   {
     path: '/tutors',
-    component: <PageTutors />
+    component: PageTutors
   },
   {
     path: '/tutors/123',
-    component: <PageTutorDetail />
+    component: PageTutorDetail
   },
 ];

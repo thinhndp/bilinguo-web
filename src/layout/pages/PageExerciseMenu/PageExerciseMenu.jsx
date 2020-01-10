@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Container } from 'react-bootstrap';
+
 import Course from './components/Course';
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 
@@ -10,7 +12,7 @@ import CommonSideCards from '../../components/CommonSideCards/CommonSideCards';
 
 function PageExerciseMenu(props) {
   return (
-    <div style={{background: "#EAEFF9", paddingBottom: 100}}>
+    <div style={{background: "#FFF", paddingBottom: 100}}>
       {/* ddd */}
       <MyNavbar />
       {/* <img
@@ -24,14 +26,14 @@ function PageExerciseMenu(props) {
         src={require("../../../assets/field17edited.png")}
         alt="field"
       /> */}
-      <div className={classes["exercises-and-may-cai-ben-phai-container"]}>
+      <Container className={classes["exercises-and-may-cai-ben-phai-container"]}>
         <div className={classes["exercises-container"]}>
           <Course courseData={exerciseGroupLvl0}></Course>
           <Course courseData={exerciseGroupLvl1}></Course>
         </div>
         <div className={classes["may-cai-ben-phai-container"]}>
 
-          <CommonSideCards isFloatingCard={true} />
+          <CommonSideCards isFloatingCard={false} />
           {/* <div className={classes["frame"]}>
             <h2 className={classes["frame-title"]}>
               <span className={classes["title"]}>Mục tiêu mỗi ngày</span>
@@ -92,7 +94,7 @@ function PageExerciseMenu(props) {
             </div>
           </div> */}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

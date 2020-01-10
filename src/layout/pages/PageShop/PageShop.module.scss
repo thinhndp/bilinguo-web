@@ -29,6 +29,7 @@
 
   .card-content-trial-description {
     font-size: 16px;
+    margin-bottom: 10px;
   }
 }
 
@@ -78,6 +79,10 @@
           font-weight: 500;
           font-size: 18px;
           color: #888;
+          
+          @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+          }
         }
       }
       
@@ -87,10 +92,6 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-
-        @media screen and (max-width: 767px) {
-          margin-top: 20px;
-        }
       }
     }
   }
@@ -245,6 +246,19 @@
       position: relative;
       z-index: 1600;
 
+      .slider-container {
+        width: 600px;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: 767px) {
+          width: 500px;
+        }
+        
+        @media screen and (max-width: 575px) {
+          width: 280px;
+        }
+      }
+
       .slide-container {
         display: flex !important;
         flex-direction: column;
@@ -275,6 +289,10 @@
       .preview-button-yes {
         width: 400px;
         margin-bottom: 10px;
+        
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
       }
       
       .preview-button-cancel {
@@ -282,7 +300,60 @@
         &:hover {
           color: #1cb0f6;
         }
+        
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
       }
     }
   } 
+}
+
+//Dialog Confirm
+.dialog-confirm {
+
+  :global(.modal-content) {
+    color: #fff;
+    border-radius: 15px;
+    background: #1cb0f6;
+  }
+
+  // .btn-buy {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+}
+
+.item-container {
+  background: #fff;
+  border-radius: 15px;
+  color: #1cb0f6;
+
+  .item-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .item-detail-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .item-title {
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .item-description {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
 }

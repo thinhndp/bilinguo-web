@@ -84,7 +84,8 @@ const BILINGUO_PLUS_FEATURES = [
 
 function PageShop() {
   // const [toggler, setToggler] = useState(false);
-  const [isModalShowPreviewPlus, setIsModalShowPreviewPlus] = useState(false)
+  const [isModalShowPreviewPlus, setIsModalShowPreviewPlus] = useState(false);
+  const [isModalShowConfirm, setIsModalShowConfirm] = useState(false);
 
   const renderClouds = (delay, duration, height) => {
     const clouds = [];
@@ -147,10 +148,15 @@ function PageShop() {
                   </div>
                 </div>
                 <div className="col-12 col-md-4">
-                  <Button variant="secondary" size="lg" className={classes['item-section-btn-buy']}>
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    className={classes['item-section-btn-buy']}
+                    onClick={() => {setIsModalShowConfirm(true)}}
+                  >
                     Mua với giá:
                     <div style={{ color: '#ff4b4b', marginLeft: 10, display: 'flex', alignItems: 'center' }}>
-                      <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/lingot.svg" alt="Lingot"/>{item.price}
+                      <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/lingot.svg" alt="Lingot" style={{ width: 26, height: 30 }} />{item.price}
                     </div>
                   </Button>
                 </div>
@@ -246,7 +252,7 @@ function PageShop() {
           {renderClouds(1, 40, 40)}
         </div>
         <Modal.Body>
-          <div style={{ width: 600, marginBottom: 40 }}>
+          <div className={classes['slider-container']}>
             <Slider dots={true} infinite={true} autoplay={true} autoplaySpeed={2500} speed={500} slidesToShow={1} slidesToScroll={1}>
               {renderPreviewPlusSlides()}
             </Slider>
@@ -254,7 +260,7 @@ function PageShop() {
           <Button
             variant="secondary"
             size="lg"
-            style={{ color: '#1cb0f6', width: 400, marginBottom: 10 }}
+            style={{ color: '#1cb0f6', }}
             className={classes['preview-button-yes']}
             onClick={() => {setIsModalShowPreviewPlus(false)}}
           >
@@ -270,6 +276,43 @@ function PageShop() {
             Không, cảm ơn
           </Button>
         </Modal.Body>
+      </Modal>
+
+      <Modal show={isModalShowConfirm} centered onHide={() => {setIsModalShowConfirm(false)}} size="md" dialogClassName={classes['dialog-confirm']}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ fontWeight: 'bold' }}>Xác nhận</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Xác nhận mua vật phẩm:</div>
+          <div className={classes['item-container']}>
+            <div className="row">
+              <div className="col-3 d-flex" style={{ paddingRight: 0 }}>
+                <div className={classes['item-image-container']}>
+                  <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-freeze.svg" alt="Streak Freeze"/>
+                </div>
+              </div>
+              <div className="col-9">
+                <div className={classes['item-detail-container']}>
+                  <div className={classes['item-title']}>
+                    Streak Freeze
+                    <span style={{ color: '#ff4b4b', marginLeft: 10, display: 'flex', alignItems: 'center' }}>
+                      <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/lingot.svg" alt="Lingot" style={{ width: 26, height: 30 }} />10
+                    </span>
+                  </div>
+                  <div className={classes['item-description']}>Streak Freeze cho phép bạn giữ nguyên streak trong một ngày bạn không có hoạt động nào.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {setIsModalShowConfirm(false)}}>
+            Đóng
+          </Button>
+          <Button variant="success" onClick={() => {setIsModalShowConfirm(false)}} className={classes['btn-buy']}>
+            Mua luôn
+          </Button>
+        </Modal.Footer>
       </Modal>
     </div>
   )

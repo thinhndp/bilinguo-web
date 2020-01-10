@@ -4,6 +4,7 @@ import { Badge, Button, Container } from 'react-bootstrap';
 import classes from './PageShop.module.scss';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
+import CommonSideCards from '../../components/CommonSideCards/CommonSideCards';
 
 const GROUP_ITEMS = [
   {
@@ -194,13 +195,14 @@ function PageShop() {
 
           <div className="d-none d-lg-block col-4">
             {/* Right Content */}
-            <div className={classes['outlined-card']}>
+            {/* <div className={classes['outlined-card']}>
               <div className={classes['card-center']}>
                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/leagues/placeholder.svg" alt="Leages"/>
                 <div className={classes['main-text']}>Mở khóa bảng xếp hạng</div>
                 <div className={classes['sub-text']}>Hoàn thành thêm 5 bài học để bắt đầu thi đua</div>
               </div>
-            </div>
+            </div> */}
+            <CommonSideCards />
           </div>
         </div>
       </Container>

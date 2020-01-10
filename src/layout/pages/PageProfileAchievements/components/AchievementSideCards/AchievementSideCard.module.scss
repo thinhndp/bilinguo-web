@@ -1,0 +1,38 @@
+.card-section {
+  border: 2px solid #ddd;
+  border-radius: 20px;
+
+  .card-section-title {
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .card-section-content {
+    padding: 20px;
+  }
+}
+
+
+.language-summary {
+  display: flex;
+
+  .language-summary-flag {
+    margin-right: 10px;
+  }
+
+  .language-summary-detail {
+    .language-summary-detail-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+    .language-summary-detail-description {
+      font-size: 16px;
+      // font-weight: bold;
+      color: #999;
+    }
+  }
+}

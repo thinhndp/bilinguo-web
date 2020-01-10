@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, Button, Container, Dropdown } from 'react-bootstrap';
+import { Badge, Button, Container, Dropdown, Form, Modal } from 'react-bootstrap';
 import InputRange from 'react-input-range';
 
 import classes from './PageTutors.module.scss';
@@ -261,7 +261,8 @@ const TUTORS = [
 ]
 
 function PageTutors() {
-  // const [priceFilterValue, setPriceFilterValue] = useState({min: 1, max: 40})
+  const [isModalShowAvailability, setIsModalShowAvailability] = useState(false);
+  const [isModalShowSendMessage, setIsModalShowSendMessage] = useState(false);
   
   const renderTutorCards = () => {
     return TUTORS.map(tutor => (
@@ -338,8 +339,17 @@ function PageTutors() {
                   </div>
                 </div>
               </div>
-              <Button variant="success" size="lg" style={{  }} className={classes['book-info-btn']}>Chi tiết</Button>
-              <Button variant="secondary" size="lg" style={{ color: '#1cb0f6' }} className={classes['book-info-btn']}>Gửi tin nhắn</Button>
+              <Button
+                variant="success" size="lg"
+                className={classes['book-info-btn']}
+                onClick={() => {window.location.href = '/tutors/123'}}
+              >Chi tiết</Button>
+              <Button
+                variant="secondary" size="lg"
+                style={{ color: '#1cb0f6' }}
+                className={classes['book-info-btn']}
+                onClick={() => {setIsModalShowSendMessage(true)}}
+              >Gửi tin nhắn</Button>
             </div>
           </div>
         </div>
@@ -362,7 +372,11 @@ function PageTutors() {
                 <div className={classes['availability-content-container']}>
                   <div className={classes['availability-title']}>Bạn rảnh vào khung giờ nào?</div>
                   <div className={classes['availability-description']}>Cập nhật thời gian rảnh của bạn để hệ thống chọn ra những gia sư thích hợp nhất!</div>
-                  <Button variant="primary" size="md" style={{ padding: '10px 40px', fontSize: 18 }} className={classes['asd']}>Cập nhật</Button>
+                  <Button
+                    variant="primary" size="md"
+                    style={{ padding: '10px 40px', fontSize: 18 }}
+                    onClick={() => {setIsModalShowAvailability(true)}}
+                  >Cập nhật</Button>
                 </div>
               </div>
             </div>
@@ -379,6 +393,59 @@ function PageTutors() {
           </div>
         </div>
       </Container>
+
+      {/* Availability Modal */}
+      <Modal show={isModalShowAvailability} centered onHide={() => {setIsModalShowAvailability(false)}}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ fontWeight: 'bold' }}>Khung giờ rảnh</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <SelectAvailability />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {setIsModalShowAvailability(false)}}>
+            Đóng
+          </Button>
+          <Button variant="success" onClick={() => {setIsModalShowAvailability(false)}}>
+            Cập nhật
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Send Message Modal */}
+      <Modal show={isModalShowSendMessage} centered onHide={() => {setIsModalShowSendMessage(false)}}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ fontWeight: 'bold' }}>Liên hệ cho David Alexander P.</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label style={{ fontSize: 16, fontWeight: 500 }}>Email của bạn*</Form.Label>
+              <Form.Control size="lg" type="email" placeholder="Nhập email" />
+              <Form.Text style={{ fontSize: 14 }} className="text-muted">
+                Email của bạn sẽ được bảo mật tuyệt đối.
+              </Form.Text>
+            </Form.Group>
+            
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label style={{ fontSize: 16, fontWeight: 500 }}>Nội dung*</Form.Label>
+              <Form.Control size="lg" as="textarea" rows="3" placeholder="Nhập nội dung cần trao đổi..." />
+              {/* <Form.Text style={{ fontSize: 14 }} className="text-muted">
+                Email của bạn sẽ được bảo mật tuyệt đối.
+              </Form.Text> */}
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {setIsModalShowSendMessage(false)}}>
+            Đóng
+          </Button>
+          <Button variant="success" onClick={() => {setIsModalShowSendMessage(false)}}>
+            Gửi tin
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </div>
   )
 }

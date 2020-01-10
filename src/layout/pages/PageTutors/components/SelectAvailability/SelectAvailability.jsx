@@ -63,7 +63,7 @@ function SelectAvailability() {
       value: 'sun',
       component: (
         <div className={classes['day-of-week-button']}>
-          Sun
+          CN
         </div>
       ),
     },
@@ -71,7 +71,7 @@ function SelectAvailability() {
       value: 'mon',
       component: (
         <div className={classes['day-of-week-button']}>
-          Mon
+          T2
         </div>
       ),
     },
@@ -79,7 +79,7 @@ function SelectAvailability() {
       value: 'tue',
       component: (
         <div className={classes['day-of-week-button']}>
-          Tue
+          T3
         </div>
       ),
     },
@@ -87,7 +87,7 @@ function SelectAvailability() {
       value: 'wed',
       component: (
         <div className={classes['day-of-week-button']}>
-          Wed
+          T4
         </div>
       ),
     },
@@ -95,7 +95,7 @@ function SelectAvailability() {
       value: 'thu',
       component: (
         <div className={classes['day-of-week-button']}>
-          Thu
+          T5
         </div>
       ),
     },
@@ -103,7 +103,7 @@ function SelectAvailability() {
       value: 'fri',
       component: (
         <div className={classes['day-of-week-button']}>
-          Fri
+          T6
         </div>
       ),
     },
@@ -111,7 +111,7 @@ function SelectAvailability() {
       value: 'sat',
       component: (
         <div className={classes['day-of-week-button']}>
-          Sat
+          T7
         </div>
       ),
     },

@@ -14,7 +14,7 @@ import {
   Dropdown
  } from 'reactstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 import MyNavbar from '../../components/MyNavbar/MyNavbar';
 import classes from './PageForum.module.scss';
@@ -113,13 +113,13 @@ const PageForum = () => {
                 >
                   Chọn chủ đề để lọc bài viết
                 </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={() => { setTopicFilter('all') }}>Tất cả</DropdownItem>
-                  <DropdownItem onClick={() => { setTopicFilter('following') }}>Đang theo dõi</DropdownItem>
+                <DropdownMenu className={classes['dd-menu']}>
+                  <DropdownItem className={classes['dd-text']} onClick={() => { setTopicFilter('all') }}>Tất cả</DropdownItem>
+                  <DropdownItem className={classes['dd-text']} onClick={() => { setTopicFilter('following') }}>Đang theo dõi</DropdownItem>
                   <DropdownItem divider />
                   {
                     mockTopics.map((topic) => (
-                      <DropdownItem onClick={() => { setTopicFilter(topic.id) }}>{topic.name}</DropdownItem>
+                      <DropdownItem className={classes['dd-text']} onClick={() => { setTopicFilter(topic.id) }}>{topic.name}</DropdownItem>
                     ))
                   }
                 </DropdownMenu>
@@ -135,9 +135,9 @@ const PageForum = () => {
                   >
                     Sắp xếp theo
                   </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem onClick={() => { setSortBy('new') }}>Mới nhất</DropdownItem>
-                    <DropdownItem onClick={() => { setSortBy('active') }}>Tương tác</DropdownItem>
+                  <DropdownMenu className={classes['dd-menu']}>
+                    <DropdownItem className={classes['dd-text']} onClick={() => { setSortBy('new') }}>Mới nhất</DropdownItem>
+                    <DropdownItem className={classes['dd-text']} onClick={() => { setSortBy('active') }}>Tương tác</DropdownItem>
                   </DropdownMenu>
                 </InputGroupButtonDropdown>
                 <Input

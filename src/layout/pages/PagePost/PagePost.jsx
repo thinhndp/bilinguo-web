@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { IoMdSend, IoIosAttach, IoIosImages, IoMdCamera, IoMdChatboxes } from 'react-icons/io';
 import uuid from 'uuid';
 
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 import classes from './PagePost.module.scss';
 

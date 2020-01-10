@@ -90,7 +90,7 @@ const PageNewPost = () => {
                 {
                   chosenTopic
                   ? chosenTopic.name
-                  : 'Chọn chủ đề để lọc bài viết'
+                  : 'Chọn chủ đề bài viết'
                 }
               </DropdownToggle>
               <DropdownMenu>

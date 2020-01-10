@@ -8,6 +8,7 @@
     "node-sass": "^4.13.0",
     "rc-progress": "^2.5.2",
     "react": "^16.11.0",
+    "react-animated-burgers": "^1.2.7",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-circular-progressbar": "^2.0.3",
     "react-dom": "^16.11.0",
@@ -21,6 +22,7 @@
     "react-youtube": "^7.9.0",
     "reactstrap": "^8.2.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^4.4.1",
     "uuid": "^3.3.3"
   },
   "scripts": {

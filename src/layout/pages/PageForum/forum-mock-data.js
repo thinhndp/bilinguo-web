@@ -1,17 +1,17 @@
 export const mockUsers = [
   { 
     uid: 'user00',
-    displayName: 'Trump',
+    displayName: 'Thắng Lê',
     profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/5a/5aa6a324b5600d1017a146e1634d452ff2f0ecb5_full.jpg'
   },
   { 
     uid: 'user01',
-    displayName: 'X',
+    displayName: 'Thịnh Nguyễn',
     profilePicture: 'http://i.imgur.com/uAciRsL.jpg'
   },
   { 
     uid: 'user02',
-    displayName: 'Tiên tri vũ trụ Trần Dần',
+    displayName: 'Thắng Nguyễn',
     profilePicture: 'https://yt3.ggpht.com/a/AGF-l7_j959MsISuAw1e0ipmLciNDJK4j3lsWGFz_Q=s240-c-k-c0xffffffff-no-rj-mo'
   },
 ];
@@ -47,11 +47,11 @@ export const mockTopics = [
 export const mockPosts = [
   {
     id: 'post00',
-    title: 'Bơi hết vào đây đkm',
+    title: 'Hellooooo',
     author: mockUsers[0],
     topic: mockTopics[2],
     postedTime: '2019-12-26T01:35:01+0700',
-    content: 'Alo alo where are you the fuck now?? Đâu rồi những con chó Hitler, Stalin?? Những thằng lol Mao Trạch Đông, Minho ĐM chúng m đâu??',
+    content: 'Alo alo where are you',
     commentCount: 3,
     upvoteCount: 2,
     downvoteCount: 1,
@@ -163,21 +163,6 @@ export const mockPosts = [
     "Iraq hứng chịu đợt tập kích bằng 22 tên lửa vào khoảng thời gian từ 1h45 đến 2h45 sáng nay. 17 quả nhằm vào căn cứ không quân Ain al-Asad gần thủ đô Baghdad, trong đó hai quả đạn không phát nổ. 5 tên lửa khác rơi xuống sở chỉ huy liên quân tại thành phố Irbil", Bộ Quốc phòng Iraq hôm 8/1 ra thông cáo cho biết.
     
     Cuộc tấn công rạng sáng 8/1 là động thái leo thang rất đáng kể với chính Iran. Nước này chưa bao giờ trực tiếp phóng tên lửa đạn đạo mang đầu đạn hàng trăm kg vào các vị trí của Mỹ tại Iraq, mà chỉ sử dụng các lực lượng ủy nhiệm sử dụng đạn cối, pháo phản lực (rocket) tập kích căn cứ, đại sứ quán Mỹ trong khu vực.`,
-    commentCount: 0,
-    upvoteCount: 2,
-    downvoteCount: 1,
-    upvoters: [ 'user00', 'user01' ],
-    downvoters: [ 'user02' ],
-    comments: []
-  },
-  {
-    id: 'post04',
-    title: `Final Fantasy 7 Remake xác nhận 'phải sửa lại ngực Tifa vì nó to một cách bất hợp lý'`,
-    author: mockUsers[2],
-    topic: mockTopics[3],
-    postedTime: '2019-12-24T01:35:01+0700',
-    content: `Anh em game thủ chúng tôi không cần hợp lý...
-    Final Fantasy 7 Remake của Square Enix đã hé lộ rất nhiều nhân vật kinh điển của trò chơi - Cloud Strife, Barrett, Aerith... nhưng còn một nhân vật nữ được yêu thích nhất nhì chính là Tifa. Cuối cùng cô nàng cũng đã được xuất hiện trong trailer mới nhất, và mang vẻ quyến rũ ngày nào.`,
     commentCount: 0,
     upvoteCount: 2,
     downvoteCount: 1,

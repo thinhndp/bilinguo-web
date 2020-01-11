@@ -175,7 +175,7 @@ const PagePost = (props) => {
             className={classes['comment-input-field']}
             minRows={1}
             maxRows={6}
-            placeholder='Alo alo gáy lên'
+            placeholder='Alo alo'
             value={userComment}
             onChange={(e) => { handleUserCommentChange(e) }}
           />

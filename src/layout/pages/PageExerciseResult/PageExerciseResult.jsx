@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./PageExerciseResult.module.scss";
 import { FaTimes, FaCheck, FaClock, FaBullseye } from "react-icons/fa";
-import { Button, Modal, OverlayTrigger, Popover } from "react-bootstrap";
+import { Button, Container, Modal, OverlayTrigger, Popover } from "react-bootstrap";
 import { mockSessionResult } from "../PageExercise/mock-exercises";
 import {
   buildStyles,
@@ -48,7 +48,7 @@ const PageExerciseResult = (props) => {
             Chúc mừng bạn đã hoàn thành bài tập!
           </h2>
         </div>
-        <div className={classes["result-body"]}>
+        <Container className={classes["result-body"]} style={{ paddingTop: 20, paddingBottom: 20 }}>
           <div className={classes["result-table-and-streak-container"]}>
             <div className={classes["result-table-container"]}>
               <div className={classes["result-table"]}>
@@ -122,7 +122,7 @@ const PageExerciseResult = (props) => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
         <div className={classes["footer"]}>
           <div className={classes["unanswered-footer"]}>
             <div className={classes["line"]}></div>

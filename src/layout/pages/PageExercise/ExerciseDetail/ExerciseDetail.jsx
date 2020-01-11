@@ -7,6 +7,7 @@ import {
   vieEngSentenceMaking,
   vieEngSentenceSelecting
 } from "../mock-exercises";
+import { Container } from "react-bootstrap";
 
 const ExerciseDetail = props => {
   const { exercise, handleAnswerChange, userAnswer } = props;
@@ -55,13 +56,15 @@ const ExerciseDetail = props => {
   };
 
   return (
-    <div className={classes["exercise-detail-container"]}>
-      <div className={classes["requirement"]}>{exercise.requirement}</div>
-      <div className={classes["question"]}>
-        {exercise.question ? exercise.question : ""}
+    <Container>
+      <div className={classes["exercise-detail-container"]}>
+        <div className={classes["requirement"]}>{exercise.requirement}</div>
+        <div className={classes["question"]}>
+          {exercise.question ? exercise.question : ""}
+        </div>
+        <div className={classes["exercise-detail"]}>{renderExercise()}</div>
       </div>
-      <div className={classes["exercise-detail"]}>{renderExercise()}</div>
-    </div>
+    </Container>
   );
 };
 
@@ -135,7 +138,7 @@ const VieEngSentenceMaking = props => {
     <div className={classes["sentence-making-container"]}>
       <div className={classes["line"] + " " + classes["line-1"]} />
       <div className={classes["line"] + " " + classes["line-2"]} />
-      <div className={classes["answer-sentence-container"]}>
+      <Container className={classes["answer-sentence-container"]}>
         {answerSentence.map(wordObj => (
           <div
             className={classes["word-container"]}
@@ -144,7 +147,7 @@ const VieEngSentenceMaking = props => {
             {wordObj.word}
           </div>
         ))}
-      </div>
+      </Container>
       <div className={classes["words-to-pick-container"]}>
         {wordsToPickList.map(wordObj => (
           <div
@@ -168,29 +171,31 @@ const VieEngSentenceMaking = props => {
 const VieEngPictureSelecting = props => {
   const { exercise, userAnswer, sendAnswer } = props;
   return (
-    <div className={classes["picture-selecting-container"]}>
+    <div className="row justify-content-center">
       {exercise.imagesToPick.map(({ index, word, imgUrl }) => (
-        <div
-          className={
-            classes["picture-and-info-container"] +
-            " " +
-            classes["hover-zone"] +
-            " " +
-            classes["shrink-on-click"] +
-            (word === userAnswer ? " " + classes["choosen-one"] : "")
-          }
-          onClick={sendAnswer.bind(this, word)}
-        >
-          <div className={classes["picture-container"]}>
-            <img
-              className={classes["picture"]}
-              src={require(`../../../../assets/${imgUrl}`)}
-              alt="illus"
-            />
-          </div>
-          <div className={classes["answer-and-tab-number"]}>
-            <div className={classes["answer"]}>{word}</div>
-            <div className={classes["tab-number"]}>{index}</div>
+        <div className={`col-6 col-md-4 mb-3 ${classes['picture-selecting-container']}`}>
+          <div
+            className={
+              classes["picture-and-info-container"] +
+              " " +
+              classes["hover-zone"] +
+              " " +
+              classes["shrink-on-click"] +
+              (word === userAnswer ? " " + classes["choosen-one"] : "")
+            }
+            onClick={sendAnswer.bind(this, word)}
+          >
+            <div className={classes["picture-container"]}>
+              <img
+                className={classes["picture"]}
+                src={require(`../../../../assets/${imgUrl}`)}
+                alt="illus"
+              />
+            </div>
+            <div className={classes["answer-and-tab-number"]}>
+              <div className={classes["answer"]}>{word}</div>
+              <div className={classes["tab-number"]}>{index}</div>
+            </div>
           </div>
         </div>
       ))}

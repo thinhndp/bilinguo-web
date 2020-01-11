@@ -1,9 +1,10 @@
 .exercise-detail-container {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   max-width: 860px;
-  flex: 1;
-  padding: 0 60px;
+  margin: auto;
+  // flex: 1;
+  // padding: 0 240px;
   color: #3c3c3c;
 
   .exercise-detail {
@@ -34,6 +35,7 @@
       flex-direction: column;
       height: 100%;
       margin: 10px;
+      position: relative;
       // background-color: chocolate;
       
       .word-container {
@@ -70,11 +72,12 @@
 
       .answer-sentence-container {
         height: 160px;
+        position: relative;
         // background-color: cornflowerblue;
         display: flex;
         flex-wrap: wrap;
-        margin: 0 10px;
-        min-width: 700px;
+        // margin: 0 10px;
+        // min-width: 700px;
       }
 
       .line {
@@ -82,14 +85,16 @@
         background-color: #CCCCCC;
         width: 100%;
         position: absolute;
-        width: 700px;
+        // width: 700px;
       }
 
       .line-1 {
         transform: translate(0, 52px);
+        width: 100%;
       }
       .line-2 {
         transform: translate(0, 132px);
+        width: 100%;
       }
     }
 
@@ -139,15 +144,16 @@
       display: flex;
       flex-direction: row;
       height: 100%;
+      justify-content: center;
 
       .picture-and-info-container {
         cursor: pointer;
-        flex: 1;
+        // display: flex;
+        // flex: 30%;
         border: 2px solid #ddd;
         border-radius: 20px;
-        height: 80%;
-        margin: 0 10px;
-        display: flex;
+        // height: 80%;
+        // margin: 0 10px;
         flex-direction: column;
         min-height: 230px;
         font-weight: bold;
@@ -164,6 +170,10 @@
           .picture {
             width: 180px;
             height: auto;
+
+            @media screen and (max-width: 400px) {
+              width: 100%;
+            }
           }
         }
 

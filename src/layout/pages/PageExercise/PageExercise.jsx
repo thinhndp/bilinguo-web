@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./PageExercise.module.scss";
 import { FaTimes, FaCheck } from "react-icons/fa";
 import { Line } from "rc-progress";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import ExerciseDetail from './ExerciseDetail/ExerciseDetail';
 import { exerciseList } from './mock-exercises';
 import { useHistory } from 'react-router-dom';
@@ -94,7 +94,7 @@ const Exercise = () => {
       {/* <div>Test: "{userAnswer}"</div> */}
       <div className={classes["container"]}>
         <div className={classes["header"]}>
-          <div className={classes["progress-bar-container"]}>
+          <Container className={classes["progress-bar-container"]}>
             <div
               className={classes["close-button"]}
               onClick={handleCloseClick}
@@ -110,7 +110,7 @@ const Exercise = () => {
                 trailColor="#eeeeee"
               ></Line>
             </div>
-          </div>
+          </Container>
         </div>
         <div className={classes["exercise-detail-container"]}>
           <ExerciseDetail 
